@@ -1,0 +1,285 @@
+#inner_page_banner h1 {
+  text-align: center;
+}
+
+#booking_page_wrap {
+  max-width: 638px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#booking_page_wrap > h2 {
+  font-family: 'Yeseva One';
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: 30px;
+}
+
+#booking_page_wrap .booking_form {
+  margin-bottom: 30px;
+}
+
+#booking_page_wrap .booking_form .form_control {
+  margin-bottom: 20px;  
+}
+
+#booking_page_wrap .booking_form .form_control label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#booking_page_wrap .booking_form .form_control input,
+#booking_page_wrap .booking_form .form_control select {
+  width: 100%;
+  height: 45px;
+  background: #F7F7F7;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+  padding: 0px 20px;
+}
+
+#booking_page_wrap .booking_form .date_time {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#booking_page_wrap .booking_form .date_time .date {
+  width: 375px;
+  margin-right: 20px;
+}
+
+#booking_page_wrap .booking_form .date_time .time {
+  width: 243px;
+}
+
+#booking_page_wrap .booking_form .date_time .time select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('../images/ico_arrow_dropdown.png');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+#booking_page_wrap .booking_conditions h2 {
+  font-family: 'Yeseva One';
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#booking_page_wrap .booking_conditions .conditions_list {
+  margin-bottom: 30px;
+}
+
+#booking_page_wrap .booking_conditions .conditions_list li {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+#booking_page_wrap .booking_conditions .conditions_list li:before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: #2EC4B6;
+  border-radius: 10px;
+  margin-top: 7px;
+  margin-right: 15px;
+}
+
+#booking_page_wrap .booking_conditions .conditions_list li span {
+  width: 95%;
+}
+
+#booking_page_wrap .agree {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+#booking_page_wrap .agree input {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+#booking_page_wrap .agree p {
+  font-weight: 700;
+}
+
+#booking_page_wrap .submit {
+  display: block;
+  background: #FF9F1C;
+  border-radius: 100px;
+  border: none;
+  padding: 13px 0px;
+  width: 270px;
+  line-height: 130%;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin: 0px auto 180px auto;
+}
+
+@media(max-width:1366px) {
+
+  #booking_page_wrap {
+    max-width: 46.706vw;
+  }
+  
+  #booking_page_wrap > h2 {
+    font-size: 1.757vw;
+    margin-bottom: 2.196vw;
+  }
+  
+  #booking_page_wrap .booking_form {
+    margin-bottom: 2.196vw;
+  }
+  
+  #booking_page_wrap .booking_form .form_control {
+    margin-bottom: 1.464vw;  
+  }
+  
+  #booking_page_wrap .booking_form .form_control label {
+    margin-bottom: 0.732vw;
+  }
+  
+  #booking_page_wrap .booking_form .form_control input,
+  #booking_page_wrap .booking_form .form_control select {
+    height: 3.294vw;
+    border: 0.073vw solid #E7E7E7;
+    border-radius: 0.366vw;
+    padding: 0vw 1.464vw;
+  }
+  
+  #booking_page_wrap .booking_form .date_time .date {
+    width: 27.452vw;
+    margin-right: 1.464vw;
+  }
+  
+  #booking_page_wrap .booking_form .date_time .time {
+    width: 17.789vw;
+  }
+
+  #booking_page_wrap .booking_conditions h2 {
+    font-size: 1.757vw;
+    margin-bottom: 1.464vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list {
+    margin-bottom: 2.196vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list li {
+    margin-bottom: 1.098vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list li:before {
+    width: 0.512vw;
+    height: 0.512vw;
+    border-radius: 0.732vw;
+    margin-top: 0.512vw;
+    margin-right: 1.098vw;
+  }
+  
+  #booking_page_wrap .agree {
+    margin-bottom: 2.196vw;
+  }
+  
+  #booking_page_wrap .agree input {
+    width: 1.464vw;
+    height: 1.464vw;
+    margin-right: 1.098vw;
+  }
+  
+  #booking_page_wrap .submit {
+    border-radius: 7.321vw;
+    padding: 0.952vw 0vw;
+    width: 19.766vw;
+    font-size: 1.464vw;
+    margin: 0vw auto 13.177vw auto;
+  }
+}
+
+@media(max-width:780px) {
+
+  #booking_page_wrap {
+    max-width: 81.795vw;
+  }
+  
+  #booking_page_wrap > h2 {
+    font-size: 3.077vw;
+    margin-bottom: 3.846vw;
+  }
+  
+  #booking_page_wrap .booking_form {
+    margin-bottom: 3.846vw;
+  }
+  
+  #booking_page_wrap .booking_form .form_control {
+    margin-bottom: 2.564vw;  
+  }
+  
+  #booking_page_wrap .booking_form .form_control label {
+    margin-bottom: 1.282vw;
+  }
+  
+  #booking_page_wrap .booking_form .form_control input,
+  #booking_page_wrap .booking_form .form_control select {
+    height: 5.769vw;
+    border: 0.128vw solid #E7E7E7;
+    border-radius: 0.641vw;
+    padding: 0vw 2.564vw;
+  }
+  
+  #booking_page_wrap .booking_form .date_time .date {
+    width: 48.077vw;
+    margin-right: 2.564vw;
+  }
+  
+  #booking_page_wrap .booking_form .date_time .time {
+    width: 31.154vw;
+  }
+
+  #booking_page_wrap .booking_conditions h2 {
+    font-size: 3.077vw;
+    margin-bottom: 2.564vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list {
+    margin-bottom: 3.846vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list li {
+    margin-bottom: 1.923vw;
+  }
+  
+  #booking_page_wrap .booking_conditions .conditions_list li:before {
+    width: 0.897vw;
+    height: 0.897vw;
+    border-radius: 1.282vw;
+    margin-top: 0.897vw;
+    margin-right: 1.923vw;
+  }
+  
+  #booking_page_wrap .agree {
+    margin-bottom: 3.846vw;
+  }
+  
+  #booking_page_wrap .agree input {
+    width: 2.564vw;
+    height: 2.564vw;
+    margin-right: 1.923vw;
+  }
+  
+  #booking_page_wrap .submit {
+    border-radius: 12.821vw;
+    padding: 1.667vw 0vw;
+    width: 34.615vw;
+    font-size: 2.564vw;
+    margin: 0vw auto 23.077vw auto;
+  }
+}

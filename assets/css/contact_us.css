@@ -1,0 +1,164 @@
+#inner_page_banner h1 {
+  text-align: center;
+}
+
+#contact_us_wrap {
+  max-width: 638px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact_us_wrap > h2 {
+  font-family: 'Yeseva One';
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: 10px;
+}
+
+#contact_us_wrap .note {
+  margin-bottom: 30px;
+}
+
+#contact_us_wrap .booking_form {
+  margin-bottom: 30px;
+}
+
+#contact_us_wrap .booking_form .form_control {
+  margin-bottom: 20px;  
+}
+
+#contact_us_wrap .booking_form .form_control label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact_us_wrap .booking_form .form_control input,
+#contact_us_wrap .booking_form .form_control textarea {
+  width: 100%;
+  height: 45px;
+  background: #F7F7F7;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+  padding: 0px 20px;
+}
+
+#contact_us_wrap .booking_form .form_control textarea {
+  height: 275px;
+  margin-bottom: 60px;
+  padding: 20px;
+}
+
+#contact_us_wrap .submit {
+  display: block;
+  background: #FF9F1C;
+  border-radius: 100px;
+  border: none;
+  padding: 13px 0px;
+  width: 270px;
+  line-height: 130%;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin: 0px auto 180px auto;
+}
+
+@media(max-width:1366px) {
+  
+  #contact_us_wrap {
+    max-width: 46.706vw;
+  }
+  
+  #contact_us_wrap > h2 {
+    font-size: 1.757vw;
+    margin-bottom: 0.732vw;
+  }
+  
+  #contact_us_wrap .note {
+    margin-bottom: 2.196vw;
+  }
+  
+  #contact_us_wrap .booking_form {
+    margin-bottom: 2.196vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control {
+    margin-bottom: 1.464vw;  
+  }
+  
+  #contact_us_wrap .booking_form .form_control label {
+    margin-bottom: 0.732vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control input,
+  #contact_us_wrap .booking_form .form_control textarea {
+    height: 3.294vw;
+    background: #F7F7F7;
+    border: 0.073vw solid #E7E7E7;
+    border-radius: 0.366vw;
+    padding: 0vw 1.464vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control textarea {
+    height: 20.132vw;
+    margin-bottom: 4.392vw;
+  }
+  
+  #contact_us_wrap .submit {
+    border-radius: 7.321vw;
+    padding: 0.952vw 0vw;
+    width: 19.766vw;
+    font-size: 1.464vw;
+    margin: 0vw auto 13.177vw auto;
+  }
+}
+
+@media(max-width:780px) {
+  
+  #contact_us_wrap {
+    max-width: 81.795vw;
+  }
+  
+  #contact_us_wrap > h2 {
+    font-size: 3.077vw;
+    margin-bottom: 1.282vw;
+  }
+  
+  #contact_us_wrap .note {
+    margin-bottom: 3.846vw;
+  }
+  
+  #contact_us_wrap .booking_form {
+    margin-bottom: 3.846vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control {
+    margin-bottom: 2.564vw;  
+  }
+  
+  #contact_us_wrap .booking_form .form_control label {
+    margin-bottom: 1.282vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control input,
+  #contact_us_wrap .booking_form .form_control textarea {
+    height: 5.769vw;
+    background: #F7F7F7;
+    border: 0.128vw solid #E7E7E7;
+    border-radius: 0.641vw;
+    padding: 0vw 2.564vw;
+  }
+  
+  #contact_us_wrap .booking_form .form_control textarea {
+    height: 35.256vw;
+    margin-bottom: 7.692vw;
+  }
+  
+  #contact_us_wrap .submit {
+    border-radius: 12.821vw;
+    padding: 1.667vw 0vw;
+    width: 34.615vw;
+    font-size: 2.564vw;
+    margin: 0vw auto 23.077vw auto;
+  }
+}

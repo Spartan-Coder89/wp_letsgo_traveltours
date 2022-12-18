@@ -1,0 +1,127 @@
+#meta_details_wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#meta_details_wrap .content_box {
+  padding: 10px;
+}
+
+#meta_details_wrap .content_box h2 {
+  padding: 0px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#meta_details_wrap .input_fields {
+  margin-bottom: 15px;
+}
+
+#meta_details_wrap .input_fields:last-of-type {
+  margin-bottom: 30px;
+}
+
+#meta_details_wrap .input_fields p {
+  width: 100%;
+  margin-right: 10px;
+}
+
+#meta_details_wrap .input_fields label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: none;
+}
+
+#meta_details_wrap .input_fields input[type="text"] {
+  max-width: 517px;
+  width: 100%;
+}
+
+#meta_details_wrap .input_fields .remove_list_item {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  color: #007cba;
+  cursor: pointer;
+}
+
+#meta_details_wrap .add_item_box textarea {
+  max-width: 517px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#meta_details_wrap .add_item_box .add_item {
+  display: block;
+  border: none;
+  padding: 10px;
+  color: #f7f7f7;
+  border-radius: 2px;
+  background-color: #007cba;
+  cursor: pointer;
+}
+
+#itenerary .tabs .tabs_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#itenerary .tabs .tabs_container {
+  margin-bottom: 10px;
+}
+
+#itenerary .tabs #minus_tab {
+  margin-right: 5px;
+}
+
+#itenerary .tabs .tabs_container {
+  width: 100%;
+  margin-right: 10px;
+}
+
+#itenerary .tabs .tabs_container .day {
+  background-color: #323232;
+  padding: 5px 10px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  width: 14%;
+  position: relative;
+  padding: 10px;
+  line-height: 100%;
+  color: #f7f7f7;
+  cursor: pointer;
+  text-align: center;
+}
+
+#itenerary .tabs .tabs_container .day:hover {
+  background-color: #1e1e1e;
+}
+
+#itenerary .tabs .tabs_container .day .remove_tab {
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  border-radius: 10px;
+  border: none;
+  line-height: 95%;
+  cursor: pointer;
+  padding: 5px 7px;
+}
+
+#itenerary .list_container .fields_wrap {
+  display: none;
+  padding: 15px 0px;
+}
+
+#itenerary .list_container .fields_wrap.show {
+  display: block;
+}
+
+@media(max-width:780px) {
+  #meta_details_wrap .content_box {
+    width: 100%;
+  }
+}

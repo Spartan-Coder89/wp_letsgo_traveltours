@@ -1,0 +1,207 @@
+#content {
+  margin-bottom: 180px;
+}
+
+#content .featured_img {
+  height: 585px;
+  background-image: url('../images/img_placeholder.jpg');
+  background-color: #f7f7f7;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 35px;
+}
+
+#content .inner_wrap {
+  max-width: 900px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+#content section {
+  margin-bottom: 20px;  
+}
+
+#content .history {
+  margin-bottom: 35px;
+}
+
+#content section h2 {
+  font-family: 'Yeseva One';
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#content section p {
+  margin-bottom: 20px;
+}
+
+#content section p:last-of-type {
+  margin-bottom: 0px;
+}
+
+#content .images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+#content .images .image {
+  width: 375px;
+  height: 280px;
+  background-image: url('../images/img_placeholder.jpg');
+  background-color: #f7f7f7;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+
+#content .images > :last-child {
+  margin-right: 0px;
+}
+
+#content .accreditations h2 {
+  font-family: 'Yeseva One';
+  font-size: 32px;
+  text-align: center;
+}
+
+#content .accreditations .inner_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#content .accreditations .logo {
+  width: 286px;
+  height: 240px;
+  background-image: url('../images/img_placeholder.jpg');
+  background-color: #f7f7f7;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#content .accreditations .inner_wrap > :nth-child(3n) {
+  margin-right: 0px;
+}
+
+@media(max-width:1366px) {
+
+  #content {
+    margin-bottom: 13.177vw;
+  }
+  
+  #content .featured_img {
+    height: 42.826vw;
+    margin-bottom: 2.562vw;
+  }
+  
+  #content .inner_wrap {
+    max-width: 65.886vw;
+  }
+  
+  #content section {
+    margin-bottom: 1.464vw;  
+  }
+  
+  #content .history {
+    margin-bottom: 2.562vw;
+  }
+  
+  #content section h2 {
+    font-size: 1.757vw;
+    margin-bottom: 1.464vw;
+  }
+  
+  #content section p {
+    margin-bottom: 1.464vw;
+  }
+  
+  #content .images {
+    margin-bottom: 5.124vw;
+  }
+  
+  #content .images .image {
+    width: 27.452vw;
+    height: 20.498vw;
+    margin-right: 1.464vw;
+  }
+
+  #content .images > :last-child {
+    margin-right: 0px;
+  }
+  
+  #content .accreditations h2 {
+    font-size: 2.343vw;
+  }
+  
+  #content .accreditations .logo {
+    width: 20.937vw;
+    height: 17.57vw;
+    margin-right: 1.464vw;
+    margin-bottom: 1.464vw;
+  }
+}
+
+@media(max-width:780px) {
+  
+  #content {
+    margin-bottom: 12.821vw;  
+  }
+  
+  #content .featured_img {
+    height: 75vw;
+    margin-bottom: 4.487vw;
+  }
+  
+  #content .inner_wrap {
+    max-width: 115.385vw;
+  }
+  
+  #content section {
+    margin-bottom: 2.564vw;  
+  }
+  
+  #content .history {
+    margin-bottom: 4.487vw;
+  }
+  
+  #content section h2 {
+    font-size: 3.077vw;
+    margin-bottom: 2.564vw;
+  }
+  
+  #content section p {
+    margin-bottom: 2.564vw;
+  }
+  
+  #content .images .image,
+  #content .accreditations .logo {
+    width: 30.513vw;
+    height: 25.641vw;
+    margin-right: 1.538vw;
+  }
+  
+  #content .images {
+    margin-bottom: 6.41vw;
+  }
+  
+  #content .images .image {
+    margin-right: 1.538vw;
+  }
+
+  #content .images > :last-child {
+    margin-right: 0vw;
+  }
+  
+  #content .accreditations h2 {
+    font-size: 4.103vw;
+  }
+  
+  #content .accreditations .logo {
+    margin-bottom: 1.538vw;
+  }
+}

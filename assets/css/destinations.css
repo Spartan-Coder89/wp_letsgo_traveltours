@@ -1,0 +1,167 @@
+#destination_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+#destination_list .destination {
+  width: 368px;
+  height: 470px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 30px;
+  background-image: url('../images/img_placeholder.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#destination_list .destination .overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+#destination_list .destination article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+#destination_list .destination p,
+#destination_list .destination h2 {
+  width: 100%;
+  color: #fff;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+#destination_list .destination h2 {
+  font-family: 'Yeseva One';
+  font-size: 24px;
+}
+
+#destination_list .destination .starting_price {
+  margin-bottom: auto;
+}
+
+#pagination {
+  margin-bottom: 180px; 
+}
+
+#pagination,
+#pagination .page_list,
+#pagination .prev,
+#pagination .next,
+#pagination .page_list div{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#pagination .prev,
+#pagination .next,
+#pagination .page_list div {
+ width: 50px;
+ height: 50px;
+}
+
+#pagination .page_list .active {
+ background-color: #2EC4B6;
+ border-radius: 100px;
+}
+
+#pagination .page_list .active {
+ font-weight: 700;
+ color: #fff;
+}
+
+@media(max-width:1366px) and (min-width:781px) {
+  
+  #destination_list {
+    margin-bottom: 5.857vw;
+  }
+  
+  #destination_list .destination {
+    width: 26.94vw;
+    height: 34.407vw;
+    margin-right: 1.464vw;
+    margin-bottom: 1.464vw;
+    padding: 2.196vw;
+  }
+  
+  #destination_list .destination p,
+  #destination_list .destination h2 {
+    margin-bottom: 1.098vw;
+  }
+  
+  #destination_list .destination h2 {
+    font-size: 1.757vw;
+  }
+  
+  #pagination {
+    margin-bottom: 13.177vw; 
+  }
+  
+  #pagination .prev,
+  #pagination .next,
+  #pagination .page_list div {
+    width: 3.66vw;
+    height: 3.66vw;
+  }
+  
+  #pagination .page_list .active {
+    border-radius: 7.321vw;
+  }
+}
+
+@media(max-width:780px) {
+
+  #destination_list {
+    max-width: 70.513vw;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7.692vw;
+  }
+  
+  #destination_list .destination {
+    width: 100%;
+    height: 44.872vw;
+    padding: 3.846vw;
+    margin-right: 0px;
+    margin-bottom: 2.564vw;
+  }
+  
+  #destination_list .destination p, 
+  #destination_list .destination h2 {
+    margin-bottom: 1.923vw;
+  }
+
+  #destination_list .destination h2 {
+    font-size: 3.077vw;
+  }
+
+  #pagination {
+    margin-bottom: 12.821vw;
+  }
+
+  #pagination .prev, #pagination .next, 
+  #pagination .page_list div {
+    width: 6.41vw;
+    height: 6.41vw;
+  }
+  
+  #pagination .prev svg, 
+  #pagination .next svg {
+    width: 3.846vw;
+    height: 3.846vw;
+  }
+
+}
