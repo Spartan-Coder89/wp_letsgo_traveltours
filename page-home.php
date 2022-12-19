@@ -1,24 +1,32 @@
-<?php get_header(); ?>
+<?php 
+  get_header(); 
+
+  $banner_customizer_values = banner_customizer_values();
+  $social_customizer_values = social_customizer_values();
+  $below_banner_customizer_values = below_banner_customizer_values();
+  $assurance_customizer_values = assurance_customizer_values();
+  $around_the_world_customizer_values = around_the_world_customizer_values();
+?>
 
 <main>
-  <div id="banner" style="background-image: url('<?php echo IMAGES_DIR; ?>/home/bg_banner.jpg');">
+  <div id="banner" style="background-image: url('<?php echo $banner_customizer_values['banner_bg']; ?>');">
     <div class="main_wrap">
       <section>
-        <h2>A beautiful destination to discover and explore.</h2>
-        <p>Your journey to relaxation and discovery</p>
-        <a class="cta" href="">Book Your Trip Now</a>
+        <h2><?php echo $banner_customizer_values['banner_headline']; ?></h2>
+        <p><?php echo $banner_customizer_values['banner_subheadline']; ?></p>
+        <a class="cta" href="<?php echo get_site_url() .'/booking' ?>">Book Your Trip Now</a>
       </section>
       <div class="social">
-        <a href="">
+        <a href="<?php echo $social_customizer_values['facebook']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_fb_banner.png" alt="">
         </a>
-        <a href="">
+        <a href="<?php echo $social_customizer_values['twitter']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_twit_banner.png" alt="">
         </a>
-        <a href="">
+        <a href="<?php echo $social_customizer_values['youtube']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_yt_banner.png" alt="">
         </a>
-        <a href="" class="inst">
+        <a href="<?php echo $social_customizer_values['instagram']; ?>" class="inst">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_inst_banner.png" alt="">
         </a>
       </div>
@@ -29,41 +37,33 @@
   <div id="below_banner">
     <div class="top">
       <section>
-        <h2>Your next awesome and exciting destination</h2>
-        <p>
-          In tortor quam, elementum et risus eget, consectetur pellentesque nibh. 
-          Nam nec sapien id ante tincidunt pretium. Donec cursus, ipsum id facilisis dignissim, 
-          lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod lectus.
-        </p>
-        <p>
-          Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, 
-          sollicitudin dapibus dolor ex euismod.
-        </p>
+        <h2><?php echo $below_banner_customizer_values['below_banner_headline']; ?></h2>
+        <?php echo wpautop($below_banner_customizer_values['below_banner_description']); ?>
       </section>
-      <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
+      <div class="featured_img" style="background-image: url('<?php echo $below_banner_customizer_values['below_banner_img']; ?>');">
         <img class="push_pin" src="<?php echo IMAGES_DIR; ?>/home/ico_push_pin.png" alt="" />
       </div>
     </div>
     <ul class="bottom">
       <li>
-        <img src="<?php echo IMAGES_DIR; ?>/home/ico_below_banner1.png" alt="">
+        <img src="<?php echo $assurance_customizer_values['assurance1_icon']; ?>" alt="">
         <div>
-          <p class="label">Safe Traveling</p>
-          <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+          <p class="label"><?php echo $assurance_customizer_values['assurance1_headline']; ?></p>
+          <p><?php echo $assurance_customizer_values['assurance1_description']; ?></p>
         </div>
       </li>
       <li>
-        <img src="<?php echo IMAGES_DIR; ?>/home/ico_below_banner2.png" alt="">
+        <img src="<?php echo $assurance_customizer_values['assurance2_icon']; ?>" alt="">
         <div>
-          <p class="label">Friendly Guides</p>
-          <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+          <p class="label"><?php echo $assurance_customizer_values['assurance2_headline']; ?></p>
+          <p><?php echo $assurance_customizer_values['assurance2_description']; ?></p>
         </div>
       </li>
       <li>
-        <img src="<?php echo IMAGES_DIR; ?>/home/ico_below_banner3.png" alt="">
+        <img src="<?php echo $assurance_customizer_values['assurance3_icon']; ?>" alt="">
         <div>
-          <p class="label">Money Back</p>
-          <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+          <p class="label"><?php echo $assurance_customizer_values['assurance3_headline']; ?></p>
+          <p><?php echo $assurance_customizer_values['assurance3_description']; ?></p>
         </div>
       </li>
     </ul>
@@ -167,28 +167,23 @@
     <div class="main_wrap">
       <img class="bg" src="<?php echo IMAGES_DIR; ?>/home/bg_world.png" alt="">
       <div class="social">
-        <a href="">
+        <a href="<?php echo $social_customizer_values['facebook']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_fb_world.png" alt="">
         </a>
-        <a href="">
+        <a href="<?php echo $social_customizer_values['twitter']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_twit_world.png" alt="">
         </a>
-        <a href="">
+        <a href="<?php echo $social_customizer_values['youtube']; ?>">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_yt_world.png" alt="">
         </a>
-        <a href="" class="inst">
+        <a href="<?php echo $social_customizer_values['instagram']; ?>" class="inst">
           <img src="<?php echo IMAGES_DIR; ?>/home/ico_inst_world.png" alt="">
         </a>
       </div>
       <section>
-        <h2>Around the World <br> With So Many Choices</h2>
-        <p>
-          Sed nisl lectus, aliquam eu suscipit et, scelerisque id ex. Curabitur lacinia erat eget gravida faucibus. 
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-          Pellentesque sit amet nunc eu augue rutrum congue. Suspendisse lectus turpis, congue sed libero et, ornare semper sapien.
-        </p>
-        <p>Pellentesque sit amet nunc eu augue rutrum congue. Suspendisse lectus turpis, congue sed libero et, ornare semper sapien.</p>
-        <a class="cta" href="#">Book Your Trip Now</a>
+        <h2><?php echo $around_the_world_customizer_values['headline']; ?></h2>
+        <?php echo wpautop($around_the_world_customizer_values['description']); ?>
+        <a class="cta" href="<?php echo get_site_url() .'/booking'; ?>">Book Your Trip Now</a>
       </section>
     </div>
   </div>

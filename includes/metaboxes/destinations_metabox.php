@@ -14,6 +14,12 @@ function letsgo_create_destinations_metabox() {
 
     <div id="meta_details_wrap">
 
+      <div id="is_featured" class="content_box">
+        <?php $is_featured_checked = get_post_meta($post->ID, '_is_featured', true) ? 'checked' : ''; ?>
+        <input type="checkbox" name="is_featured" <?php echo $is_featured_checked; ?>>
+        <p>Is Featured</p>
+      </div>
+      
       <div id="general_details" class="content_box">
         <h2>General Details</h2>
         <div id="general_details_list_container" class="fields_wrap">

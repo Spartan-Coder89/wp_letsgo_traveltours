@@ -56,4 +56,21 @@ function letsgo_save_destinations_metadata($post_id) {
     update_post_meta($post_id, '_itenerary', []);
   }
 
+  if (isset($_POST['is_featured'])) {
+
+    $destinations = get_posts(array(
+      'posts_per_page' => -1,
+      'post_type' => 'destinations',
+      'post__not_in' => array($post_id)
+    ));
+
+    foreach ($destinations as $key => $destination) {
+      update_post_meta($destination->ID, '_is_featured', false);
+    }
+
+    update_post_meta($post_id, '_is_featured', true);
+    
+  } else {
+    update_post_meta($post_id, '_is_featured', false);
+  }
 }

@@ -63,6 +63,23 @@
   cursor: pointer;
 }
 
+#is_featured {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+#is_featured input {
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+#is_featured p {
+  margin: 0px;
+  font-weight: 600;
+}
+
 #itenerary .tabs .tabs_container {
   display: flex;
   align-items: center;
