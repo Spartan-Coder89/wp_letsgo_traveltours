@@ -73,14 +73,13 @@ add_action('wp_enqueue_scripts', function() {
   wp_enqueue_script( 'common_js', JS_DIR .'/common.js', null, 0.1, true );
 
   if (is_page('home')) {
-
-    wp_enqueue_style( 'slick_css', VENDOR_DIR .'/slick/slick-theme.css');
     wp_enqueue_style( 'slick_css', VENDOR_DIR .'/slick/slick.css');
+    wp_enqueue_style( 'slick_css', VENDOR_DIR .'/slick/slick-theme.css');
     wp_enqueue_style( 'home_css', CSS_DIR .'/home.css');
 
     wp_enqueue_script( 'jquery_js', JS_DIR .'/jquery.js', null, 0.1, true );
     wp_enqueue_script( 'slick_js', VENDOR_DIR .'/slick/slick.min.js', null, 0.1, true );
-    wp_enqueue_script( 'home_js', JS_DIR .'/common.js', null, 0.1, true );
+    wp_enqueue_script( 'home_js', JS_DIR .'/home.js', null, 0.1, true );
   }
 
   if (is_page('contact-us')) {
@@ -117,19 +116,19 @@ add_action('admin_enqueue_scripts', function($hook) {
 
     if (isset( $_GET['post'])) {
 
-      if (get_post_type( $_GET['post'] ) == 'destinations'){
-        wp_enqueue_style( 'destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css' );
-        wp_enqueue_script( 'destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null );
+      if (get_post_type($_GET['post']) == 'destinations'){
+        wp_enqueue_style('destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css');
+        wp_enqueue_script('destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null);
       }
 
-    } else if (isset( $_GET['post_type'])) {
+    } else if (isset($_GET['post_type'])) {
 
       if ($_GET['post_type'] == 'destinations') {
-        wp_enqueue_style( 'destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css' );
-        wp_enqueue_script( 'destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null );
+        wp_enqueue_style('destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css');
+        wp_enqueue_script('destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null);
       }
 
-    } else{
+    } else {
       //  Do Nothing
     }
   }

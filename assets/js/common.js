@@ -1,5 +1,5 @@
-window.onpageshow = function() {
-  
+window.addEventListener('DOMContentLoaded', function() {
+
   if (window.scrollY >= 80) {
     document.getElementById('header').classList.add('scrolled');
   } else {
@@ -20,4 +20,5 @@ window.onpageshow = function() {
       document.querySelector('#header .sp_layout .main_nav').classList.toggle('open');
     });
   }
-}
+
+});

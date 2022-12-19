@@ -11,8 +11,12 @@ function output_menu($menu_name) {
     $main_nav_menu = wp_get_nav_menu_object($menu_name);
     $main_nav_menu_items = wp_get_nav_menu_items($main_nav_menu);
 
-    foreach ($main_nav_menu_items as $menu_item) {
-      echo '<a href="'. $menu_item->url .'">'. $menu_item->post_title .'</a>';
+    foreach ($main_nav_menu_items as $key => $menu_item) {
+      if (($key + 1) <= 5) {
+        echo '<a href="'. $menu_item->url .'">'. $menu_item->post_title .'</a>';
+      } else {
+        break;
+      }
     }
   }
 }

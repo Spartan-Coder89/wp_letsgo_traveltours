@@ -62,6 +62,7 @@
   margin-left: auto;
   max-width: 270px;
   width: 100%;
+  text-align: center;
 }
 
 #banner .social {
@@ -103,7 +104,7 @@
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  margin-bottom: 180px;
+  margin-bottom: 220px;
   padding: 35px 40px;
   background-color: #f7f7f7;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -384,6 +385,7 @@
   color: #fff;
   max-width: 270px;
   width: 100%;
+  text-align: center;
 }
 
 #testimonial {
@@ -651,7 +653,7 @@
   }
   
   #below_banner .top {
-    margin-bottom: 13.177vw;
+    margin-bottom: 16.105vw;
     padding: 2.562vw 2.928vw;
     box-shadow: 0vw 0.293vw 0.293vw rgba(0, 0, 0, 0.25);
   }
@@ -1021,7 +1023,7 @@
   }
 
   #below_banner .top {
-    margin-bottom: 44.872vw;
+    margin-bottom: 28.205vw;
     padding: 4.487vw 5.128vw;
     padding-bottom: 12.821vw;
     box-shadow: 0vw 0.513vw 0.513vw rgba(0, 0, 0, 0.25);
