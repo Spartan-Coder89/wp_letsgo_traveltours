@@ -119,6 +119,7 @@ add_action('admin_enqueue_scripts', function($hook) {
       if (get_post_type($_GET['post']) == 'destinations'){
         wp_enqueue_style('destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css');
         wp_enqueue_script('destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null);
+        wp_enqueue_script('mishaupload', ADMIN_JS_DIR .'/video_uploader.js', array('jquery', 'media'));
       }
 
     } else if (isset($_GET['post_type'])) {
@@ -126,6 +127,7 @@ add_action('admin_enqueue_scripts', function($hook) {
       if ($_GET['post_type'] == 'destinations') {
         wp_enqueue_style('destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css');
         wp_enqueue_script('destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null);
+        wp_enqueue_script('mishaupload', ADMIN_JS_DIR .'/video_uploader.js', array('jquery', 'media'));
       }
 
     } else {

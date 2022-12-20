@@ -1,27 +1,6 @@
 <?php
 
 /**
- * Receives nav menu name as parameter
- * Outputs the the menu items in html format
- */
-function output_menu($menu_name) {
-
-  if (!empty(wp_get_nav_menu_object($menu_name))) {
-
-    $main_nav_menu = wp_get_nav_menu_object($menu_name);
-    $main_nav_menu_items = wp_get_nav_menu_items($main_nav_menu);
-
-    foreach ($main_nav_menu_items as $key => $menu_item) {
-      if (($key + 1) <= 5) {
-        echo '<a href="'. $menu_item->url .'">'. $menu_item->post_title .'</a>';
-      } else {
-        break;
-      }
-    }
-  }
-}
-
-/**
  * Outputs post meta on destinations post's
  * general details
  */
@@ -146,98 +125,88 @@ function destination_itenerary_meta($post_id) {
 }
 
 /**
- * Get homepage banner customizer values
+ * Outputs best features meta on destinations post's
+ * itenerary list
  */
-function banner_customizer_values() {
+function best_features_meta($post_id) {
 
-  if (empty(get_theme_mod('letsgo_banner_bg_setting'))) {
-    $banner_bg = IMAGES_DIR .'/home/bg_banner.jpg';
+  $best_features = get_post_meta($post_id, '_best_features', true);
+
+  if (!empty($best_features)) {
+    foreach ($best_features as $key => $value) {
+      echo 
+      '<div class="input_fields">
+        <p>'. $value .'</p>
+        <input type="hidden" name="best_features[]" value="'. $value .'">
+        <button class="remove_list_item" type="button">Remove</button>
+      </div>';
+    }
+  }
+}
+
+/**
+ * Get featured destination details
+ */
+function featured_destination_details() {
+
+  $destinations = get_posts(array(
+    'posts_per_page' => 1,
+    'post_type' => 'destinations',
+    'meta_key' => '_is_featured',
+    'meta_value' => true
+  ));
+
+  $best_features = get_post_meta($destinations[0]->ID, '_best_features', true);
+  $best_features_markup = '';
+  foreach ($best_features as $key => $feature) {
+    $best_features_markup .= '<li><span class="bullets"></span><span>'. $feature .'</span></li>';
+  }
+
+  if (!empty(get_the_post_thumbnail_url($destinations[0]->ID))) {
+    $featured_img = get_the_post_thumbnail_url($destinations[0]->ID);
   } else {
-    $banner_bg = wp_get_attachment_image_url(get_theme_mod('letsgo_banner_bg_setting'), [1366,1366]);
+    $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
   }
 
   return array(
-    'banner_bg' => $banner_bg,
-    'banner_headline' => get_theme_mod('letsgo_banner_headline_setting'),
-    'banner_subheadline' => get_theme_mod('letsgo_banner_subheadline_setting')
+    'post_title' => $destinations[0]->post_title,
+    'post_content' => $destinations[0]->post_content,
+    'featured_img' => $featured_img,
+    'best_features' => $best_features_markup
   );
 }
 
 /**
- * Get homepage below banner customizer values
+ * Query all destinations
+ * Returns a markup string
  */
-function below_banner_customizer_values() {
+function get_all_destinations() {
 
-  if (empty(get_theme_mod('letsgo_below_banner_img_setting'))) {
-    $below_banner_img = IMAGES_DIR .'/img_placeholder.jpg';
-  } else {
-    $below_banner_img = wp_get_attachment_image_url(get_theme_mod('letsgo_below_banner_img_setting'), [565, 450]);
+  $destinations = get_posts(array(
+    'posts_per_page' => -1,
+    'post_type' => 'destinations'
+  ));
+
+  $destinations_markup = '';
+  foreach ($destinations as $key => $destination) {
+
+    if (!empty(get_the_post_thumbnail_url($destination->ID))) {
+      $featured_img = get_the_post_thumbnail_url($destination->ID);
+    } else {
+      $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
+    }
+
+    $destinations_markup .=
+    '<article class="destination">
+      <div class="featured_img" style="background-image: url('. $featured_img .');">
+        <div class="overlay">
+          <a href="'. get_the_permalink($destination->ID) .'">READ MORE</a>
+        </div>
+      </div>
+      <h2 class="title">'. $destination->post_title .'</h2>
+      <p>'. get_post_meta($destination->ID, '_general_details', true)['location'] .'</p>
+    </article>';
   }
 
-  return array(
-    'below_banner_img' => $below_banner_img,
-    'below_banner_headline' => get_theme_mod('letsgo_below_banner_headline_setting'),
-    'below_banner_description' => get_theme_mod('letsgo_below_banner_description_setting')
-  );
+  return $destinations_markup;
 }
-
-/**
- * Get homepage below banner customizer values
- */
-function assurance_customizer_values() {
-
-  if (empty(get_theme_mod('letsgo_assurance1_icon_setting'))) {
-    $assurance1_icon = IMAGES_DIR .'/home/ico_below_banner1.png';
-  } else {
-    $assurance1_icon = wp_get_attachment_image_url(get_theme_mod('letsgo_assurance1_icon_setting'), [60, 60]);
-  }
-
-  if (empty(get_theme_mod('letsgo_assurance2_icon_setting'))) {
-    $assurance2_icon = IMAGES_DIR .'/home/ico_below_banner2.png';
-  } else {
-    $assurance2_icon = wp_get_attachment_image_url(get_theme_mod('letsgo_assurance2_icon_setting'), [60, 60]);
-  }
-
-  if (empty(get_theme_mod('letsgo_assurance3_icon_setting'))) {
-    $assurance3_icon = IMAGES_DIR .'/home/ico_below_banner1.png';
-  } else {
-    $assurance3_icon = wp_get_attachment_image_url(get_theme_mod('letsgo_assurance3_icon_setting'), [60, 60]);
-  }
-
-  return array(
-    'assurance1_icon' => $assurance1_icon,
-    'assurance2_icon' => $assurance1_icon,
-    'assurance3_icon' => $assurance1_icon,
-    'assurance1_headline' => get_theme_mod('letsgo_assurance1_headline_setting'),
-    'assurance2_headline' => get_theme_mod('letsgo_assurance2_headline_setting'),
-    'assurance3_headline' => get_theme_mod('letsgo_assurance3_headline_setting'),
-    'assurance1_description' => get_theme_mod('letsgo_assurance1_description_setting'),
-    'assurance2_description' => get_theme_mod('letsgo_assurance2_description_setting'),
-    'assurance3_description' => get_theme_mod('letsgo_assurance3_description_setting')
-  );
-}
-
-/**
- * Around the world
- */
-function around_the_world_customizer_values() {
-
-  return array(
-    'headline' => get_theme_mod('letsgo_around_the_world_headline_setting'),
-    'description' => get_theme_mod('letsgo_around_the_world_description_setting')
-  );
-}
-
-/**
- * Get homepage banner customizer values
- */
-function social_customizer_values() {
-
-  return array(
-    'facebook' => get_theme_mod('letsgo_social_facebook_setting'),
-    'twitter' => get_theme_mod('letsgo_social_twitter_setting'),
-    'youtube' => get_theme_mod('letsgo_social_youtube_setting'),
-    'instagram' => get_theme_mod('letsgo_social_instagram_setting')
-  );
-}
-

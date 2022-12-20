@@ -99,8 +99,8 @@ $wp_customize->add_control(new WP_Customize_Cropped_Image_Control( $wp_customize
 )));
 
 //  Assurance 1 Headline
-$wp_customize->add_setting( 'letsgo_assurance1_headline_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance1_headline_control', array(
+$wp_customize->add_setting('letsgo_assurance1_headline_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance1_headline_control', array(
   'label' => 'Assurance 1 Headline',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance1_headline_setting',
@@ -108,8 +108,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_ass
 )));
 
 //  Assurance 1 description
-$wp_customize->add_setting( 'letsgo_assurance1_description_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance1_description_control', array(
+$wp_customize->add_setting('letsgo_assurance1_description_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance1_description_control', array(
   'label' => 'Assurance 1 Description',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance1_description_setting',
@@ -127,8 +127,8 @@ $wp_customize->add_control(new WP_Customize_Cropped_Image_Control( $wp_customize
 )));
 
 //  Assurance 2 Headline
-$wp_customize->add_setting( 'letsgo_assurance2_headline_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance2_headline_control', array(
+$wp_customize->add_setting('letsgo_assurance2_headline_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance2_headline_control', array(
   'label' => 'Assurance 2 Headline',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance2_headline_setting',
@@ -136,8 +136,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_ass
 )));
 
 //  Assurance 2 description
-$wp_customize->add_setting( 'letsgo_assurance2_description_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance2_description_control', array(
+$wp_customize->add_setting('letsgo_assurance2_description_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance2_description_control', array(
   'label' => 'Assurance 2 Description',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance2_description_setting',
@@ -155,8 +155,8 @@ $wp_customize->add_control(new WP_Customize_Cropped_Image_Control( $wp_customize
 )));
 
 //  Assurance 2 Headline
-$wp_customize->add_setting( 'letsgo_assurance3_headline_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance3_headline_control', array(
+$wp_customize->add_setting('letsgo_assurance3_headline_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance3_headline_control', array(
   'label' => 'Assurance 3 Headline',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance3_headline_setting',
@@ -164,8 +164,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_ass
 )));
 
 //  Assurance 2 description
-$wp_customize->add_setting( 'letsgo_assurance3_description_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_assurance3_description_control', array(
+$wp_customize->add_setting('letsgo_assurance3_description_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_assurance3_description_control', array(
   'label' => 'Assurance 3 Description',
   'section' => 'letsgo_assurance_section',
   'settings' => 'letsgo_assurance3_description_setting',
@@ -182,8 +182,8 @@ $wp_customize->add_section('letsgo_around_the_world_section', array(
 ));
 
 //  Around the world headline
-$wp_customize->add_setting( 'letsgo_around_the_world_headline_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_around_the_world_headline_control', array(
+$wp_customize->add_setting('letsgo_around_the_world_headline_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_around_the_world_headline_control', array(
   'label' => 'Around The World Headline',
   'section' => 'letsgo_around_the_world_section',
   'settings' => 'letsgo_around_the_world_headline_setting',
@@ -191,8 +191,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_aro
 )));
 
 //  Around the world description
-$wp_customize->add_setting( 'letsgo_around_the_world_description_setting');
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'letsgo_around_the_world_description_control', array(
+$wp_customize->add_setting('letsgo_around_the_world_description_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_around_the_world_description_control', array(
   'label' => 'Around The World Description',
   'section' => 'letsgo_around_the_world_section',
   'settings' => 'letsgo_around_the_world_description_setting',

@@ -105,12 +105,12 @@ window.onpageshow = function() {
 
     let name = '';
 
-    if (list_container_id == 'general_details_list_container') {
-      name = 'general_details[]';
-    }
-
     if (list_container_id == 'key_highlights_list_container') {
       name = 'key_highlights[]';
+    }
+
+    if (list_container_id == 'best_features_list_container') {
+      name = 'best_features[]';
     }
 
     document.getElementById(button_id).addEventListener('click', function() {
@@ -131,6 +131,7 @@ window.onpageshow = function() {
     });
   }
   add_items_to_list('key_highlights_add_item', 'key_highlights_list_container', 'key_highlights_item_content');
+  add_items_to_list('best_features_add_item', 'best_features_list_container', 'best_features_item_content');
 
 
   /**

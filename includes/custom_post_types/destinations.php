@@ -28,13 +28,11 @@ function letsgo_destinations_cpt() {
       'rewrite'            => true,
       'capability'         => 'post',
       'heirarchical'       => FALSE,
-      // 'show_in_rest'       => true,
+      'show_in_rest'       => true,
       'supports'           => array(
           'title',
           'editor',
-          'author',
-          'thumbnail',
-          'excerpt'
+          'thumbnail'
       ),
       'exclude_from_search' => FALSE
     );

@@ -6,6 +6,7 @@
   $below_banner_customizer_values = below_banner_customizer_values();
   $assurance_customizer_values = assurance_customizer_values();
   $around_the_world_customizer_values = around_the_world_customizer_values();
+  $featured_destination_details = featured_destination_details();
 ?>
 
 <main>
@@ -71,39 +72,16 @@
 
   <div id="featured_destination">
     <div class="main_wrap">
-      <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');"></div>
+      <div class="featured_img" style="background-image: url('<?php echo $featured_destination_details['featured_img']; ?>);"></div>
       <div class="details">
         <section>
           <h2>
             Featured Destination: <br>
-            The Hidden Waterfalls of Bali
+            <?php echo $featured_destination_details['post_title']; ?>
           </h2>
-          <p>
-            In tortor quam, elementum et risus eget, consectetur pellentesque nibh. 
-            Nam nec sapien id ante tincidunt pretium. Donec cursus, ipsum id facilisis dignissim, 
-            lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod lectus.
-          </p>
-          <p>
-            Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, 
-            sollicitudin dapibus dolor ex euismod.
-          </p>
+          <?php echo wpautop($featured_destination_details['post_content']); ?>
           <ul>
-            <li>
-              <span class="bullets"></span>
-              <span>Lorem orci luctus mauris.</span>
-            </li>
-            <li>
-              <span class="bullets"></span>
-              <span>Sollicitudin dapibus dolor ex euismod.</span>
-            </li>
-            <li>
-              <span class="bullets"></span>
-              <span>Nam nec sapien id ante tincidunt.</span>
-            </li>
-            <li>
-              <span class="bullets"></span>
-              <span>Donec cursus, ipsum id facilisis dignissim.</span>
-            </li>
+            <?php echo $featured_destination_details['best_features']; ?>
           </ul>
         </section>
       </div>
@@ -114,51 +92,7 @@
     <section class="main_wrap">
       <h2>Explore Popular <br> Destination Spots</h2>
       <div id="explore_carousel">
-        <article class="destination">
-          <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
-            <div class="overlay">
-              <a href="#">READ MORE</a>
-            </div>
-          </div>
-          <h2 class="title">Eiffel Tower</h2>
-          <p>France</p>
-        </article>
-        <article class="destination">
-          <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
-            <div class="overlay">
-              <a href="#">READ MORE</a>
-            </div>
-          </div>
-          <h2 class="title">Eiffel Tower</h2>
-          <p>France</p>
-        </article>
-        <article class="destination">
-          <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
-            <div class="overlay">
-              <a href="#">READ MORE</a>
-            </div>
-          </div>
-          <h2 class="title">Eiffel Tower</h2>
-          <p>France</p>
-        </article>
-        <article class="destination">
-          <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
-            <div class="overlay">
-              <a href="#">READ MORE</a>
-            </div>
-          </div>
-          <h2 class="title">Eiffel Tower</h2>
-          <p>France</p>
-        </article>
-        <article class="destination">
-          <div class="featured_img" style="background-image: url('<?php echo IMAGES_DIR; ?>/img_placeholder.jpg');">
-            <div class="overlay">
-              <a href="#">READ MORE</a>
-            </div>
-          </div>
-          <h2 class="title">Eiffel Tower</h2>
-          <p>France</p>
-        </article>
+        <?php echo get_all_destinations(); ?>
       </div>
     </section>
   </div>

@@ -6,4 +6,4 @@ include_once 'includes/metaboxes/create_metaboxes.php';
 include_once 'includes/save_metadata/save_metadata.php';
 include_once 'includes/create_pages/create_pages.php';
 include_once 'includes/customizer/create_customizer.php';
-include_once 'includes/helper_functions.php';
+include_once 'includes/helper_functions/helper_functions.php';

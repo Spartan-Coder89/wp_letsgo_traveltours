@@ -15,6 +15,14 @@ function letsgo_save_destinations_metadata($post_id) {
     return;
   }
   
+  if (isset($_POST['starting_price']) and !empty(isset($_POST['starting_price']))) {
+    $starting_price = htmlspecialchars(strip_tags($_POST['starting_price']));
+    update_post_meta($post_id, '_starting_price', $starting_price);
+  } else {
+    update_post_meta($post_id, '_starting_price', null);
+  }
+
+  //  General Details
   if (isset($_POST['general_details']) and !empty($_POST['general_details'])) { 
     
     $general_details = $_POST['general_details'];
@@ -28,6 +36,7 @@ function letsgo_save_destinations_metadata($post_id) {
     update_post_meta($post_id, '_general_details', []);
   }
 
+  //  Key Highlights
   if (isset($_POST['key_highlights']) and !empty($_POST['key_highlights'])) {
 
     $key_highlights = $_POST['key_highlights'];
@@ -41,6 +50,7 @@ function letsgo_save_destinations_metadata($post_id) {
     update_post_meta($post_id, '_key_highlights', []);
   }
 
+  //  Itenerary
   if (isset($_POST['itenerary']) and !empty($_POST['itenerary'])) {
 
     $itenerary = $_POST['itenerary'];
@@ -56,6 +66,21 @@ function letsgo_save_destinations_metadata($post_id) {
     update_post_meta($post_id, '_itenerary', []);
   }
 
+  //  Best Features
+  if (isset($_POST['best_features']) and !empty($_POST['best_features'])) {
+
+    $best_features = $_POST['best_features'];
+    foreach ($best_features as $key => $value) {
+      $best_features[$key] = htmlspecialchars(strip_tags($value));
+    }
+
+    update_post_meta($post_id, '_best_features', $best_features);
+
+  } else {
+    update_post_meta($post_id, '_best_features', []);
+  }
+
+  //  Is Featured
   if (isset($_POST['is_featured'])) {
 
     $destinations = get_posts(array(
