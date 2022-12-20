@@ -10,11 +10,17 @@
   margin-right: 20px;
   margin-bottom: 20px;
   position: relative;
-  padding: 30px;
   background-image: url('../images/img_placeholder.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#destination_list .destination .permalink {
+  display: block;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
 }
 
 #destination_list .destination .overlay {
@@ -57,9 +63,10 @@
 
 #pagination,
 #pagination .page_list,
-#pagination .prev,
-#pagination .next,
-#pagination .page_list div{
+#pagination .prev a,
+#pagination .next a,
+#pagination .page_list div,
+#pagination .page_list div a{
  display: flex;
  align-items: center;
  justify-content: center;
@@ -72,12 +79,19 @@
  height: 50px;
 }
 
+#pagination .prev a,
+#pagination .next a,
+#pagination .page_list div a {
+  width: 100%;
+  height: 100%;
+}
+
 #pagination .page_list .active {
  background-color: #2EC4B6;
  border-radius: 100px;
 }
 
-#pagination .page_list .active {
+#pagination .page_list .active a {
  font-weight: 700;
  color: #fff;
 }
@@ -163,5 +177,4 @@
     width: 3.846vw;
     height: 3.846vw;
   }
-
 }

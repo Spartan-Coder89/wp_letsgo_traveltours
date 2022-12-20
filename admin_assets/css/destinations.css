@@ -120,8 +120,9 @@
   text-align: center;
 }
 
+#itenerary .tabs .tabs_container .day.active,
 #itenerary .tabs .tabs_container .day:hover {
-  background-color: #1e1e1e;
+  background-color: #161616;
 }
 
 #itenerary .tabs .tabs_container .day .remove_tab {
@@ -142,6 +143,32 @@
 
 #itenerary .list_container .fields_wrap.show {
   display: block;
+}
+
+#video {
+  max-width: 535px;
+  width: 100%;
+}
+
+#video video {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+#video .button {
+  display: block;
+  border: none;
+  padding: 5px 10px;
+  color: #f7f7f7;
+  border-radius: 2px;
+  background-color: #007cba;
+  cursor: pointer;
+  max-width: 102px;
+  text-align: center;
+}
+
+#video .video_remove {
+  text-decoration: none;
 }
 
 @media(max-width:780px) {

@@ -58,3 +58,65 @@ function get_inner_title() {
 
   return $page_title;
 }
+
+/**
+ * Output post pagination
+ */
+function post_pagination($max_num_pages, $current_page, $base_url) {
+
+  $start_page = ($current_page < 5) ? 1 : $current_page - 4;
+  $end_page = 8 + $start_page;
+  $end_page = ($max_num_pages < $end_page) ? $max_num_pages : $end_page;
+  $diff = $start_page - $end_page + 8;
+  $start_page -= ($start_page - $diff > 0) ? $diff : 0;
+  
+  global $post; 
+  $current_page = $current_page == 0 ? $current_page + 1 : $current_page;
+
+  for($i=$start_page; $i<=$end_page; $i++) {
+    
+    $active_class = $current_page == $i ? 'class="active"' : '';
+    $page_url = $base_url .'/page/'. $i;
+
+    echo '<div '. $active_class .'><a href="'. $page_url .'">'. $i .'</a></div>';
+  }
+
+}
+
+/**
+ * Output previous arrow on pagination
+ */
+function prev_pagination($current_page, $base_url) {
+
+  $current_page = $current_page == 0 ? $current_page + 1 : $current_page;
+  $page_number = ($current_page - 1) < 1 ? 1 : $current_page - 1;
+  $page_url = $base_url .'/page/'. $page_number;
+
+  echo
+  '<div class="prev">
+    <a href="'. $page_url .'">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.25 22.5L20 20.75L14.25 15L20 9.25L18.25 7.5L10.75 15L18.25 22.5Z" fill="#131313"/>
+      </svg>
+    </a>
+  </div>';
+}
+
+/**
+ * Output next arrow on pagination
+ */
+function next_pagination($current_page, $max_pages, $base_url) {
+
+  $current_page = $current_page == 0 ? $current_page + 1 : $current_page;
+  $page_number = ($current_page + 1) > $max_pages ? $current_page : $current_page + 1;
+  $page_url = $base_url .'/page/'. $page_number;
+
+  echo
+  '<div class="next">
+    <a href="'. $page_url .'">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.75 22.5L10 20.75L15.75 15L10 9.25L11.75 7.5L19.25 15L11.75 22.5Z" fill="#131313"/>
+      </svg>
+    </a>
+  </div>';
+}

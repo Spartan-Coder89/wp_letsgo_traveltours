@@ -69,6 +69,11 @@ function letsgo_create_destinations_metabox() {
           <button id="best_features_add_item" class="add_item" type="button">Add New Item</button>
         </div>
       </div>
+
+      <div id="video" class="content_box">
+        <h2>Add Video</h2>
+        <?php output_video_uploader_markup($post->ID); ?>
+      </div>
     </div>
 
     <input type="hidden" name="destinations_post_nonce" value="<?php echo wp_create_nonce('destinations_post_nonce'); ?>">

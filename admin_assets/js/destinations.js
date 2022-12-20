@@ -4,7 +4,7 @@ window.onpageshow = function() {
    * Insert new tab and new itenerary list
    */
   document.getElementById('new_tab').addEventListener('click', function() {
-    
+
     let tabs_container_child_count = document.getElementById('tabs_container').childElementCount;
     let day_count = tabs_container_child_count > 0 ? tabs_container_child_count + 1 : 1;
 
@@ -61,6 +61,12 @@ window.onpageshow = function() {
     let target_element = e.target;
 
     if (target_element.matches('div.day')) {
+
+      document.querySelectorAll('#itenerary .tabs .day').forEach( function(element) {
+        element.classList.remove('active');
+      });
+      
+      target_element.classList.add('active');
 
       document.querySelectorAll('#itenerary_list_container .fields_wrap').forEach( function(element) {
         if (element.classList.contains('show')) {

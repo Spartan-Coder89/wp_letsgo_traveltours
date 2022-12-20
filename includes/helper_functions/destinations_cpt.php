@@ -158,8 +158,10 @@ function featured_destination_details() {
 
   $best_features = get_post_meta($destinations[0]->ID, '_best_features', true);
   $best_features_markup = '';
-  foreach ($best_features as $key => $feature) {
-    $best_features_markup .= '<li><span class="bullets"></span><span>'. $feature .'</span></li>';
+  if (!empty($best_features)) {
+    foreach ($best_features as $key => $feature) {
+      $best_features_markup .= '<li><span class="bullets"></span><span>'. $feature .'</span></li>';
+    }
   }
 
   if (!empty(get_the_post_thumbnail_url($destinations[0]->ID))) {
@@ -174,6 +176,37 @@ function featured_destination_details() {
     'featured_img' => $featured_img,
     'best_features' => $best_features_markup
   );
+}
+
+/**
+ * Output media uploader markup
+ */
+function output_video_uploader_markup($post_id) {
+  
+  $image_id = get_post_meta($post_id, '_video_attachment', true);
+
+  if (!empty($image_id))  {
+
+    $image = wp_get_attachment_url($image_id, 'medium');
+
+    echo
+    '<a href="#" class="video_upload">
+      <video controls>
+        <source src="'. esc_url($image) .'" type="video/mp4">
+        <source src="'. esc_url($image) .'" type="video/ogg">
+      </video>
+    </a>
+    <a href="#" class="video_remove">Remove image</a>
+    <input type="hidden" name="video_attachment" value="'. absint($image_id) .'">';
+
+  } else {
+
+    echo
+    '<div type="button" class="button video_upload">Upload Video</div>
+    <a href="#" class="video_remove" style="display:none">Remove image</a>
+    <input type="hidden" name="video_attachment" value="">';
+  }
+
 }
 
 /**

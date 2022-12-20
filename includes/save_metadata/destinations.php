@@ -98,4 +98,12 @@ function letsgo_save_destinations_metadata($post_id) {
   } else {
     update_post_meta($post_id, '_is_featured', false);
   }
+
+  //  Video attachment
+  if (isset($_POST['video_attachment']) and !empty($_POST['video_attachment'])) {
+    $video_attachment = htmlspecialchars(strip_tags($_POST['video_attachment']));
+    update_post_meta($post_id, '_video_attachment', $video_attachment);
+  } else {
+    update_post_meta($post_id, '_video_attachment', $video_attachment);
+  }
 }

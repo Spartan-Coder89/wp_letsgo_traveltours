@@ -6,10 +6,11 @@
   <div class="main_wrap">
     <div id="destination_list">
 
-    <?php 
+      <?php 
         $destinations_query = new WP_Query(array(
           'posts_per_page' => 12,
-          'post_type' => 'destinations'
+          'post_type' => 'destinations',
+          'paged' => get_query_var('paged') ? get_query_var('paged') : 1
         ));
 
         if ($destinations_query->have_posts()) {
@@ -21,12 +22,14 @@
 
             echo
             '<div class="destination" style="background-image: url('. get_the_post_thumbnail_url() .');">
-              <div class="overlay"></div>
-              <article>
-                <p class="starting_price">From USD 450/Person</p>
-                <h2 class="destination_name">'. get_the_title() .'</h2>
-                <p class="location">'. $general_details['location'] .'</p>
-              </article>
+              <a href="'. get_the_permalink() .'" class="permalink">
+                <div class="overlay"></div>
+                <article>
+                  <p class="starting_price">'. get_post_meta($post->ID, '_starting_price', true) .'</p>
+                  <h2 class="destination_name">'. get_the_title() .'</h2>
+                  <p class="location">'. $general_details['location'] .'</p>
+                </article>
+              </a>
             </div>';
           }
 
@@ -37,29 +40,15 @@
         wp_reset_postdata();
       ?>
     </div>
-
-    <div id="pagination" >
-      <div class="prev">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.25 22.5L20 20.75L14.25 15L20 9.25L18.25 7.5L10.75 15L18.25 22.5Z" fill="#131313"/>
-        </svg>
-      </div>
+    
+    <div id="pagination">
+      <?php prev_pagination(get_query_var('paged'), get_site_url() .'/destinations'); ?>
       <div class="page_list">
-        <div class="active">1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
+        <?php post_pagination($destinations_query->max_num_pages, get_query_var('paged'), get_site_url() .'/destinations'); ?>
       </div>
-      <div class="next">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.75 22.5L10 20.75L15.75 15L10 9.25L11.75 7.5L19.25 15L11.75 22.5Z" fill="#131313"/>
-        </svg>
-      </div>
+      <?php next_pagination(get_query_var('paged'), $destinations_query->max_num_pages, get_site_url() .'/destinations'); ?>
     </div>
+
   </div>
 </main>
 
