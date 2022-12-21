@@ -107,7 +107,6 @@
     height: 34.407vw;
     margin-right: 1.464vw;
     margin-bottom: 1.464vw;
-    padding: 2.196vw;
   }
   
   #destination_list .destination p,
@@ -148,7 +147,6 @@
   #destination_list .destination {
     width: 100%;
     height: 44.872vw;
-    padding: 3.846vw;
     margin-right: 0px;
     margin-bottom: 2.564vw;
   }

@@ -1,84 +1,32 @@
 <?php get_header(); ?>
 
 <main>
-    <div id="inner_page_banner" style="background-image: url('../common/images/inner_page_banner.jpg');">
-      <section class="main_wrap">
-        <h1><?php echo get_the_title($post->ID); ?></h1>
-      </section>
-      <div class="overlay"></div>
-    </div>
+    <?php get_template_part('temp_parts/inner_page_banner'); ?>
 
     <div id="details" class="single_wrap">
       <div class="top">
-        <div class="featured_img" style="background-image: url('../common/images/img_placeholder.jpg');"></div>
+        <div 
+          class="featured_img" 
+          <?php $featured_img = get_the_post_thumbnail_url($post->ID, 'large'); ?>
+          style="background-image: url('<?php echo !empty($featured_img) ? $featured_img : IMAGES_DIR .'/img_placeholder.jpg'; ?>');"></div>
         <ul class="detail_list">
-          <li>
-            <p class="label">Location:</p>
-            <p class="value">Alaska, United States of America</p>
-          </li>
-          <li>
-            <p class="label">Flight:</p>
-            <p class="value">FSC - Full Service Carrier</p>
-          </li>
-          <li>
-            <p class="label">Board and Lodging:</p>
-            <p class="value">5 Star</p>
-          </li>
-          <li>
-            <p class="label">Meals:</p>
-            <p class="value">Full board meals</p>
-          </li>
-          <li>
-            <p class="label">Tour Guide:</p>
-            <p class="value">Visa processing fee is free of charge</p>
-          </li>
-          <li>
-            <p class="label">Visa:</p>
-            <p class="value">Visa processing fee is free of charge</p>
-          </li>
+          <?php destination_general_details_frontend($post->ID); ?>
         </ul>
       </div>
       <div class="description">
         <p class="label">Description</p>
-        <p>
-          Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. 
-          In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. 
-          Donec sed lacinia diam. Donec auctor id purus ac scelerisque. 
-          Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.
-        </p>
+        <?php echo wpautop(get_the_content($post->ID)); ?>
       </div>
     </div>
 
     <div id="video_promotion" class="main_wrap">
-      <video src="../common/video/vid_placeholder.mp4" controls></video>
+      <?php output_video_attachment_frontend($post); ?>
     </div>
 
     <section id="key_highlights" class="single_wrap">
       <h2>Key Highlights</h2>
       <ul class="highlights">
-        <li class="highlight">
-          <img src="../common/images/single_page/ico_check.png" alt="">
-          <span>
-            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-            scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. 
-          </span>
-        </li>
-        <li class="highlight">
-          <img src="../common/images/single_page/ico_check.png" alt="">
-          <span>
-            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-            scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.  
-            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-            scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.
-          </span>
-        </li>
-        <li class="highlight">
-          <img src="../common/images/single_page/ico_check.png" alt="">
-          <span>
-            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-            scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. 
-          </span>
-        </li>
+        <?php destination_key_highlights_frontend($post->ID); ?>
       </ul>
     </section>
 
@@ -86,52 +34,10 @@
       <h2>Itenerary</h2>
       <div id="tabs">
         <div class="tabs_nav">
-          <div class="day active" data-day="1">
-            Day 1
-          </div>
-          <div class="day" data-day="2">
-            Day 2
-          </div>
-          <div class="day" data-day="3">
-            Day 3
-          </div>
-          <div class="day" data-day="4">
-            Day 4
-          </div>
+          <?php itenerary_days_tabs($post->ID); ?>
         </div>
         <div class="itenerary_list">
-          <ol id="day_1" class="show">
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. 
-            </li>
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.  
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.
-            </li>
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. 
-            </li>
-          </ol>
-          <ol id="day_1">
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam2.
-            </li>
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.  
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam2.
-            </li>
-            <li>
-              Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, 
-              scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam2. 
-            </li>
-          </ol>
+          <?php destination_itenerary_frontend($post->ID); ?>
         </div>
       </div>
     </section>
@@ -142,7 +48,7 @@
           <h2>Ready To Go?</h2>
           <p>Click the button to book your destination</p>
         </section>
-        <a href="" class="cta_btn">BOOK YOUR TRIP NOW</a>
+        <a href="<?php echo get_site_url() .'/booking'; ?>" class="cta_btn">BOOK YOUR TRIP NOW</a>
       </div>
     </div>
   </main>

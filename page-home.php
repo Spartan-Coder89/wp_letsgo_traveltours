@@ -72,7 +72,7 @@
 
   <div id="featured_destination">
     <div class="main_wrap">
-      <div class="featured_img" style="background-image: url('<?php echo $featured_destination_details['featured_img']; ?>);"></div>
+      <div class="featured_img" style="background-image: url(<?php echo $featured_destination_details['featured_img']; ?>);"></div>
       <div class="details">
         <section>
           <h2>
@@ -127,78 +127,7 @@
       <h2>Our Satisfied Clients</h2>
       <p>Here’s what our clients have to say on our rockstar service</p>
       <div id="clients_carousel">
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
-        <div class="client">
-          <div class="pro_pic"></div>
-          <article>
-            <p class="statement">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. 
-              Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. 
-              Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-            </p>
-            <h2 class="name">John William Doe</h2>
-            <p class="position">Chief Executive Officer</p>
-          </article>
-        </div>
+        <?php echo get_all_testimonials(); ?>
       </div>
     </section>
   </div>
@@ -226,24 +155,7 @@
     <h2>Latest Blog</h2>
     <p>See what’s latest</p>
     <div class="posts">
-      <article class="post">
-        <div class="featured_img"></div>
-        <h2>Lorem ipsum dolor sit consectetuer donec justo avenir</h2>
-        <p>Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-        <a href="">Read More..</a>
-      </article>
-      <article class="post">
-        <div class="featured_img"></div>
-        <h2>Lorem ipsum dolor sit consectetuer donec justo avenir</h2>
-        <p>Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-        <a href="">Read More..</a>
-      </article>
-      <article class="post">
-        <div class="featured_img"></div>
-        <h2>Lorem ipsum dolor sit consectetuer donec justo avenir</h2>
-        <p>Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-        <a href="">Read More..</a>
-      </article>
+      <?php echo get_all_posts(); ?>
     </div>
   </section>
 

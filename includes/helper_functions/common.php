@@ -48,6 +48,11 @@ function get_inner_title() {
     $page_title = '';
   }
 
+  if (is_singular('destinations')) {
+    global $post;
+    $page_title = get_the_title($post->ID);
+  }
+
   if (is_page('contact-us')) {
     $page_title = 'Contact Us';
   }
@@ -119,4 +124,96 @@ function next_pagination($current_page, $max_pages, $base_url) {
       </svg>
     </a>
   </div>';
+}
+
+/**
+ * Query all posts
+ * Returns a markup string
+ */
+function get_all_posts() {
+
+  $posts = get_posts(array(
+    'posts_per_page' => 3,
+    'post_type' => 'post'
+  ));
+
+  $posts_markup = '';
+
+  if (!empty($posts)) {
+
+    foreach ($posts as $key => $post) {
+
+      if (!empty(get_the_post_thumbnail_url($post->ID))) {
+        $featured_img = get_the_post_thumbnail_url($post->ID);
+      } else {
+        $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
+      }
+      
+      $posts_markup .=
+      '<article class="post">
+        <div class="featured_img" style="background-image: url('. $featured_img .');"></div>
+        <h2>'. $post->post_title .'</h2>
+        <p>'. $post->post_excerpt .'</p>
+        <a href="'. get_the_permalink($post->ID) .'">Read More..</a>
+      </article>';
+    }
+  
+    return $posts_markup;
+  }
+}
+
+/**
+ * Output header logo urls
+ */
+function header_logo_url() {
+
+  $logo_trans_url = '';
+  $logo_white_url = '';
+
+  if (!empty(get_theme_mod('letsgo_header_logo_trans_setting'))) {
+    $logo_trans_id = get_theme_mod('letsgo_header_logo_trans_setting');
+    $logo_trans_url = wp_get_attachment_image_url($logo_trans_id);
+  }
+
+  if (!empty(get_theme_mod('letsgo_header_logo_white_setting'))) {
+    $logo_white_id = get_theme_mod('letsgo_header_logo_white_setting');
+    $logo_white_url = wp_get_attachment_image_url($logo_white_id);
+  }
+
+  return array(
+    'logo_trans_url' => $logo_trans_url,
+    'logo_white_url' => $logo_white_url
+  );
+}
+
+/**
+ * Output footer logo
+ */
+function footer_logo_url() {
+
+  $footer_logo_url = '';
+
+  if (!empty(get_theme_mod('letsgo_footer_logo_setting'))) {
+    $footer_logo_id = get_theme_mod('letsgo_footer_logo_setting');
+    $footer_logo_url = wp_get_attachment_image_url($footer_logo_id, 'large');
+  }
+
+  return $footer_logo_url;
+}
+
+/**
+ * Footer description
+ */
+function footer_description() {
+  return get_theme_mod('letsgo_footer_description_setting');
+}
+
+/**
+ * Get contact details
+ */
+function contact_info() {
+  return array(
+    'phone' => get_theme_mod('letsgo_phone_setting'),
+    'email' => get_theme_mod('letsgo_email_setting')
+  );
 }

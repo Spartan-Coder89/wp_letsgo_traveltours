@@ -100,6 +100,7 @@ add_action('wp_enqueue_scripts', function() {
 
   if (is_singular('destinations')) {
     wp_enqueue_style( 'single_destination_css', CSS_DIR .'/single_destination.css');
+    wp_enqueue_script( 'destinations_js', JS_DIR .'/single_destinations.js', null, 0.1, true );
   }
 
   if (is_singular('post')) {
@@ -122,12 +123,20 @@ add_action('admin_enqueue_scripts', function($hook) {
         wp_enqueue_script('mishaupload', ADMIN_JS_DIR .'/video_uploader.js', array('jquery', 'media'));
       }
 
+      if (get_post_type($_GET['post']) == 'testimonials'){
+        wp_enqueue_style('testimonials_admin_style', ADMIN_CSS_DIR .'/testimonials.css');
+      }
+
     } else if (isset($_GET['post_type'])) {
 
       if ($_GET['post_type'] == 'destinations') {
         wp_enqueue_style('destinations_admin_style', ADMIN_CSS_DIR .'/destinations.css');
         wp_enqueue_script('destinations_admin_script', ADMIN_JS_DIR .'/destinations.js', null);
         wp_enqueue_script('mishaupload', ADMIN_JS_DIR .'/video_uploader.js', array('jquery', 'media'));
+      }
+
+      if ($_GET['post_type'] == 'testimonials') {
+        wp_enqueue_style('testimonials_admin_style', ADMIN_CSS_DIR .'/testimonials.css');
       }
 
     } else {

@@ -54,6 +54,58 @@ function destination_general_details_meta($post_id) {
 
 /**
  * Outputs post meta on destinations post's
+ * general details on the frontend
+ */
+function destination_general_details_frontend($post_id) {
+  
+  $general_details = get_post_meta($post_id, '_general_details', true);
+
+  $location = !empty($general_details['location']) ? $general_details['location'] : '';
+  $flight = !empty($general_details['flight']) ? $general_details['flight'] : '';
+  $board_and_lodging = !empty($general_details['board_and_lodging']) ? $general_details['board_and_lodging'] : '';
+  $meals = !empty($general_details['meals']) ? $general_details['meals'] : '';
+  $tour_guide = !empty($general_details['tour_guide']) ? $general_details['tour_guide'] : '';
+  $visa = !empty($general_details['visa']) ? $general_details['visa'] : '';
+  
+  echo
+  '<li class="input_fields">
+    <p class="label">Location:</p>
+    <p class="value">'. $location .'</p>
+  </li>';
+
+  echo
+  '<li class="input_fields">
+    <p class="label">Flight:</p>
+    <p class="value">'. $flight .'</p>
+  </li>';
+
+  echo
+  '<li class="input_fields">
+    <p class="label">Board and Lodging::</p>
+    <p class="value">'. $board_and_lodging .'</p>
+  </li>';
+
+  echo
+  '<li class="input_fields">
+    <p class="label">Meals:</p>
+    <p class="value">'. $meals .'</p>
+  </li>';
+
+  echo
+  '<li class="input_fields">
+    <p class="label">Tour Guide:</p>
+    <p class="value">'. $tour_guide .'</p>
+  </li>';
+
+  echo
+  '<li class="input_fields">
+    <p class="label">Visa:</p>
+    <p class="value">'. $visa .'</p>
+  </li>';
+}
+
+/**
+ * Outputs post meta on destinations post's
  * key highlights
  */
 function destination_key_highlights_meta($post_id) {
@@ -73,6 +125,25 @@ function destination_key_highlights_meta($post_id) {
 }
 
 /**
+ * Outputs post meta on destinations post's
+ * key highlights on the frontend
+ */
+function destination_key_highlights_frontend($post_id) {
+  
+  $key_highlights = get_post_meta($post_id, '_key_highlights', true);
+
+  if (!empty($key_highlights)) {
+    foreach ($key_highlights as $key => $value) {
+      echo
+      '<li class="highlight">
+        <img src="'. IMAGES_DIR .'/single_page/ico_check.png" alt="">
+        <span>'. $value .'</span>
+      </li>';
+    }
+  }
+}
+
+/**
  * Outputs itenerary tab on destinations post's
  * itenerary list
  */
@@ -82,7 +153,8 @@ function itenerary_days_tabs($post_id) {
 
   if (!empty($itenerary)) {
     foreach ($itenerary as $day => $list) {
-      echo '<div class="day" data-day="'. $day .'">Day '. $day .'</div>';
+      $active_class = $day == 1 ? 'active' : '';
+      echo '<div class="day '. $active_class .'" data-day="'. $day .'">Day '. $day .'</div>';
     }
   }
 }
@@ -125,6 +197,29 @@ function destination_itenerary_meta($post_id) {
 }
 
 /**
+ * Outputs post meta on destinations post's
+ * itenerary list
+ */
+function destination_itenerary_frontend($post_id) {
+
+  $itenerary = get_post_meta($post_id, '_itenerary', true);
+
+  if (!empty($itenerary)) {
+
+    foreach ($itenerary as $day => $list) {
+      
+      $show_class = $day == 1 ? 'class="show"' : '';
+
+      echo '<ol id="day_'. $day .'" '. $show_class .'>';
+      foreach ($list as $list_key => $list_value) {
+        echo '<li>'. $list_value .'</li>';
+      }
+      echo '</ol>';
+    }
+  }
+}
+
+/**
  * Outputs best features meta on destinations post's
  * itenerary list
  */
@@ -156,25 +251,33 @@ function featured_destination_details() {
     'meta_value' => true
   ));
 
-  $best_features = get_post_meta($destinations[0]->ID, '_best_features', true);
-  $best_features_markup = '';
-  if (!empty($best_features)) {
-    foreach ($best_features as $key => $feature) {
-      $best_features_markup .= '<li><span class="bullets"></span><span>'. $feature .'</span></li>';
+  if (!empty($destinations)) {
+    
+    $best_features = get_post_meta($destinations[0]->ID, '_best_features', true);
+    $best_features_markup = '';
+    if (!empty($best_features)) {
+      foreach ($best_features as $key => $feature) {
+        $best_features_markup .= '<li><span class="bullets"></span><span>'. $feature .'</span></li>';
+      }
+    }
+  
+    if (!empty(get_the_post_thumbnail_url($destinations[0]->ID))) {
+      $featured_img = get_the_post_thumbnail_url($destinations[0]->ID);
+    } else {
+      $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
     }
   }
 
-  if (!empty(get_the_post_thumbnail_url($destinations[0]->ID))) {
-    $featured_img = get_the_post_thumbnail_url($destinations[0]->ID);
-  } else {
-    $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
-  }
+  $post_title = !empty($destinations) ? $destinations[0]->post_title : '';
+  $post_content = !empty($destinations) ? $destinations[0]->post_content : '';
+  $featured_img = !empty($destinations) ? $featured_img : $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
+  $best_features = !empty($best_features) ? $best_features_markup : '';
 
   return array(
-    'post_title' => $destinations[0]->post_title,
-    'post_content' => $destinations[0]->post_content,
+    'post_title' => $post_title,
+    'post_content' => $post_content,
     'featured_img' => $featured_img,
-    'best_features' => $best_features_markup
+    'best_features' => $best_features
   );
 }
 
@@ -183,21 +286,21 @@ function featured_destination_details() {
  */
 function output_video_uploader_markup($post_id) {
   
-  $image_id = get_post_meta($post_id, '_video_attachment', true);
+  $video_id = get_post_meta($post_id, '_video_attachment', true);
 
-  if (!empty($image_id))  {
+  if (!empty($video_id))  {
 
-    $image = wp_get_attachment_url($image_id, 'medium');
+    $video_url = wp_get_attachment_url($video_id, 'medium');
 
     echo
     '<a href="#" class="video_upload">
       <video controls>
-        <source src="'. esc_url($image) .'" type="video/mp4">
-        <source src="'. esc_url($image) .'" type="video/ogg">
+        <source src="'. esc_url($video_url) .'" type="video/mp4">
+        <source src="'. esc_url($video_url) .'" type="video/ogg">
       </video>
     </a>
     <a href="#" class="video_remove">Remove image</a>
-    <input type="hidden" name="video_attachment" value="'. absint($image_id) .'">';
+    <input type="hidden" name="video_attachment" value="'. absint($video_id) .'">';
 
   } else {
 
@@ -206,7 +309,20 @@ function output_video_uploader_markup($post_id) {
     <a href="#" class="video_remove" style="display:none">Remove image</a>
     <input type="hidden" name="video_attachment" value="">';
   }
+}
 
+function output_video_attachment_frontend($post) {
+
+  $video_id = get_post_meta($post->ID, '_video_attachment', true);
+
+  if (!empty($video_id)) {
+    $video_url = wp_get_attachment_url($video_id, 'medium');
+    echo
+    '<video controls>
+      <source src="'. esc_url($video_url) .'" type="video/mp4">
+      <source src="'. esc_url($video_url) .'" type="video/ogg">
+    </video>';
+  }
 }
 
 /**
@@ -221,25 +337,29 @@ function get_all_destinations() {
   ));
 
   $destinations_markup = '';
-  foreach ($destinations as $key => $destination) {
 
-    if (!empty(get_the_post_thumbnail_url($destination->ID))) {
-      $featured_img = get_the_post_thumbnail_url($destination->ID);
-    } else {
-      $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
-    }
+  if (!empty($destinations)) {
 
-    $destinations_markup .=
-    '<article class="destination">
-      <div class="featured_img" style="background-image: url('. $featured_img .');">
-        <div class="overlay">
-          <a href="'. get_the_permalink($destination->ID) .'">READ MORE</a>
+    foreach ($destinations as $key => $destination) {
+  
+      if (!empty(get_the_post_thumbnail_url($destination->ID))) {
+        $featured_img = get_the_post_thumbnail_url($destination->ID);
+      } else {
+        $featured_img = IMAGES_DIR .'/img_placeholder.jpg';
+      }
+  
+      $destinations_markup .=
+      '<article class="destination">
+        <div class="featured_img" style="background-image: url('. $featured_img .');">
+          <div class="overlay">
+            <a href="'. get_the_permalink($destination->ID) .'">READ MORE</a>
+          </div>
         </div>
-      </div>
-      <h2 class="title">'. $destination->post_title .'</h2>
-      <p>'. get_post_meta($destination->ID, '_general_details', true)['location'] .'</p>
-    </article>';
+        <h2 class="title">'. $destination->post_title .'</h2>
+        <p>'. get_post_meta($destination->ID, '_general_details', true)['location'] .'</p>
+      </article>';
+    }
+  
+    return $destinations_markup;
   }
-
-  return $destinations_markup;
 }

@@ -16,8 +16,8 @@
     <div class="main_wrap pc_layout">
       <a class="header_logo_wrap" href="./">
         <h1>
-          <img id="bg_not_white" class="header_logo" src="<?php echo IMAGES_DIR; ?>/header_logo_black.png" alt="">
-          <img id="bg_white" class="header_logo show" src="<?php echo IMAGES_DIR; ?>/header_logo_white.png" alt="">
+          <img id="bg_not_white" class="header_logo" src="<?php echo header_logo_url()['logo_white_url']; ?>" alt="">
+          <img id="bg_white" class="header_logo show" src="<?php echo header_logo_url()['logo_trans_url']; ?>" alt="">
         </h1>
       </a>
       <nav class="main_nav">

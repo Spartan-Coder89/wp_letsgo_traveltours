@@ -1,0 +1,22 @@
+#meta_details .postbox-header,
+#meta_details_wrap {
+  max-width: 840px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#meta_details_wrap .content_box {
+  padding: 10px;
+}
+
+#meta_details_wrap .content_box label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: none;
+}
+
+#meta_details_wrap .content_box input[type="text"] {
+  max-width: 517px;
+  width: 100%;
+}
