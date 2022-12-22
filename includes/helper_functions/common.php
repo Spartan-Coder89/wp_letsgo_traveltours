@@ -32,23 +32,15 @@ function get_inner_title() {
     $page_title = 'Destinations to Explore';
   }
 
-  if (is_singular('destinations')) {
-    $page_title = '';
-  }
-
   if (is_page('booking')) {
     $page_title = 'Book Your Destination';
   }
 
-  if (is_post_type_archive('post')) {
+  if (is_page('blog')) {
     $page_title = 'Know what’s the latest';
   }
 
-  if (is_singular('post')) {
-    $page_title = '';
-  }
-
-  if (is_singular('destinations')) {
+  if (is_singular('destinations') or is_singular('post')) {
     global $post;
     $page_title = get_the_title($post->ID);
   }

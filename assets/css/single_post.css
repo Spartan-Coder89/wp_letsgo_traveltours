@@ -1,12 +1,20 @@
+#featured_img {
+  display: block;
+  max-width: 1166px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 585px;
+}
+
 #content {
   max-width: 900px;
   width: 100%;
   margin-bottom: 180px;
-}
-
-#content .featured_img {
-  width: 100%;
-  margin-bottom: 20px;
 }
 
 #content h2,
@@ -94,6 +102,12 @@
 }
 
 @media(max-width:780px) {
+
+  #featured_img {
+    max-width: 149.487vw;
+    margin-bottom: 2.564vw;
+    height: 75vw;
+  }
 
   #content {
     max-width: 115.385vw;

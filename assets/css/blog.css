@@ -67,7 +67,7 @@
  border-radius: 100px;
 }
 
-#pagination .page_list .active {
+#pagination .page_list .active a {
  font-weight: 700;
  color: #fff;
 }

@@ -90,12 +90,12 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style( 'about_css', CSS_DIR .'/about_us.css');
   }
 
-  if (is_post_type_archive('destinations')) {
-    wp_enqueue_style( 'destinations_css', CSS_DIR .'/destinations.css');
+  if (is_page('blog')) {
+    wp_enqueue_style( 'blog_css', CSS_DIR .'/blog.css');
   }
 
-  if (is_post_type_archive('post')) {
-    wp_enqueue_style( 'blog_css', CSS_DIR .'/blog.css');
+  if (is_post_type_archive('destinations')) {
+    wp_enqueue_style( 'destinations_css', CSS_DIR .'/destinations.css');
   }
 
   if (is_singular('destinations')) {

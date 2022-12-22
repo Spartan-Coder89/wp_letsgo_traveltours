@@ -33,8 +33,6 @@
             </div>';
           }
 
-        } else {
-          // no posts found
         }
 
         wp_reset_postdata();
