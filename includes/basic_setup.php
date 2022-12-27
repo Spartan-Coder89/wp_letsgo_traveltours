@@ -94,6 +94,10 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style( 'blog_css', CSS_DIR .'/blog.css');
   }
 
+  if (is_page('booking')) {
+    wp_enqueue_style( 'bokking_css', CSS_DIR .'/booking_page.css');
+  }
+
   if (is_post_type_archive('destinations')) {
     wp_enqueue_style( 'destinations_css', CSS_DIR .'/destinations.css');
   }

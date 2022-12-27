@@ -23,7 +23,7 @@
       <nav class="main_nav">
         <?php output_menu('Main Navigation'); ?>
       </nav>
-      <a class="cta" href="">Book Here</a>
+      <a class="cta" href="<?php echo get_site_url() .'/booking' ?>">Book Here</a>
     </div>
 
     <div class="main_wrap sp_layout">
