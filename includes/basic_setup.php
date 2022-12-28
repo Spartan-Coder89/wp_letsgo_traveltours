@@ -84,6 +84,7 @@ add_action('wp_enqueue_scripts', function() {
 
   if (is_page('contact-us')) {
     wp_enqueue_style( 'contact_us_css', CSS_DIR .'/contact_us.css');
+    wp_enqueue_script( 'contact_js', JS_DIR .'/contact_us.js', null, 0.1, true );
   }
 
   if (is_page('about-us')) {
@@ -96,6 +97,7 @@ add_action('wp_enqueue_scripts', function() {
 
   if (is_page('booking')) {
     wp_enqueue_style( 'booking_css', CSS_DIR .'/booking_page.css');
+    wp_enqueue_script( 'contact_js', JS_DIR .'/booking.js', null, 0.1, true );
   }
 
   if (is_post_type_archive('destinations')) {
@@ -110,6 +112,7 @@ add_action('wp_enqueue_scripts', function() {
   if (is_singular('post')) {
     wp_enqueue_style( 'single_post_css', CSS_DIR .'/single_post.css');
   }
+
 });
 
 /**

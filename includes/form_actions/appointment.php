@@ -14,27 +14,27 @@ function set_appointment() {
   }
 
   if ($_POST['meeting_date']) {
-    $meeting_date = htmlspecialchars(strip_tags($meeting_date));
+    $meeting_date = htmlspecialchars(strip_tags($_POST['meeting_date']));
   }
 
   if ($_POST['meeting_time']) {
-    $meeting_time = htmlspecialchars(strip_tags($meeting_time));
+    $meeting_time = htmlspecialchars(strip_tags($_POST['meeting_time']));
   }
 
   if ($_POST['fname']) {
-    $fname = htmlspecialchars(strip_tags($fname));
+    $fname = htmlspecialchars(strip_tags($_POST['fname']));
   }
 
   if ($_POST['lname']) {
-    $lname = htmlspecialchars(strip_tags($lname));
+    $lname = htmlspecialchars(strip_tags($_POST['lname']));
   }
 
   if ($_POST['email']) {
-    $email = htmlspecialchars(strip_tags($email));
+    $email = htmlspecialchars(strip_tags($_POST['email']));
   }
 
   if ($_POST['tel']) {
-    $tel = htmlspecialchars(strip_tags($tel));
+    $tel = htmlspecialchars(strip_tags($_POST['tel']));
   }
 
   $to = get_option('admin_email');

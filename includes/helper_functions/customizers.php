@@ -165,7 +165,7 @@ function about_us_accreditation_images() {
   }
 
   if (!empty(get_theme_mod('letsgo_accreditation6_setting'))) {
-    $images_markup .= '<div class="logo" style="background-image:url('. wp_get_attachment_image_url(get_theme_mod('letsgo_accreditation1_setting'), 'large') .');"></div>';
+    $images_markup .= '<div class="logo" style="background-image:url('. wp_get_attachment_image_url(get_theme_mod('letsgo_accreditation6_setting'), 'large') .');"></div>';
   } else {
     $images_markup .= '<div class="logo" style="background-image: url('. IMAGES_DIR .'/img_placeholder.jpg);"></div>';
   }

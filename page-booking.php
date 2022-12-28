@@ -9,20 +9,20 @@
       <div class="date_time">
         <div class="form_control date">
           <label>Choose your prefered date:</label>
-          <input type="date" name="meeting_date">
+          <input type="date" name="meeting_date" id="meeting_date" class="check_input_change">
         </div>
         <div class="form_control time">
           <label>Choose your prefered time:</label>
-          <select name="meeting_time">
-            <option>2:00 PM - 3:00 PM</option>
-            <option>3:00 PM - 4:00 PM</option>
-            <option>4:00 PM - 5:00 PM</option>
+          <select name="meeting_time" id="meeting_time" class="check_input_change">
+            <option value="2:00PM-3:00PM">2:00 PM - 3:00 PM</option>
+            <option value="3:00PM-4:00PM">3:00 PM - 4:00 PM</option>
+            <option value="4:00PM-5:00PM">4:00 PM - 5:00 PM</option>
           </select>
         </div>
       </div>
       <div class="form_control">
         <label>First name:</label>
-        <input type="text" name="fname">
+        <input type="text" name="fname" id="fname" class="check_input">
       </div>
       <div class="form_control">
         <label>Last name:</label>
@@ -30,7 +30,7 @@
       </div>
       <div class="form_control">
         <label>Email Address:</label>
-        <input type="text" name="email">
+        <input type="text" name="email" id="email" class="check_input">
       </div>
       <div class="form_control">
         <label>Contact number:</label>
@@ -68,10 +68,10 @@
         </li>
       </ul>
       <div class="agree">
-        <input id="agree" type="checkbox">
+        <input type="checkbox" id="agree" class="check_input_change">
         <p>I AGREE TO THE BOOKING CONDITIONS</p>
       </div>
-      <button class="submit" form="booking_form">Send Message</button>
+      <button id="submit" class="submit" form="booking_form" disabled>Send Message</button>
     </div>
   </section>
 </main>

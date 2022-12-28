@@ -61,6 +61,11 @@
   font-size: 20px;
   color: #FFFFFF;
   margin: 0px auto 180px auto;
+  cursor: pointer;
+}
+
+#contact_us_wrap .submit[disabled] {
+  background-color: #7b756d;
 }
 
 @media(max-width:1366px) {

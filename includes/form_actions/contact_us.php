@@ -14,19 +14,19 @@ function contact_us() {
   }
 
   if ($_POST['fname']) {
-    $fname = htmlspecialchars(strip_tags($fname));
+    $fname = htmlspecialchars(strip_tags($_POST['fname']));
   }
 
   if ($_POST['lname']) {
-    $lname = htmlspecialchars(strip_tags($lname));
+    $lname = htmlspecialchars(strip_tags($_POST['lname']));
   }
 
   if ($_POST['email']) {
-    $email = htmlspecialchars(strip_tags($email));
+    $email = htmlspecialchars(strip_tags($_POST['email']));
   }
 
   if ($_POST['message']) {
-    $message = htmlspecialchars(strip_tags($message));
+    $message = htmlspecialchars(strip_tags($_POST['message']));
   }
 
   $to = get_option('admin_email');
