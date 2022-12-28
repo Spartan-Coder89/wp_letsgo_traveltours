@@ -7,3 +7,4 @@ include_once 'includes/save_metadata/save_metadata.php';
 include_once 'includes/create_pages/create_pages.php';
 include_once 'includes/customizer/create_customizer.php';
 include_once 'includes/helper_functions/helper_functions.php';
+include_once 'includes/form_actions/create_form_actions.php';

@@ -40,7 +40,7 @@
   background: #F7F7F7;
   border: 1px solid #E7E7E7;
   border-radius: 5px;
-  padding: 0px 20px;
+  padding: 20px;
 }
 
 #contact_us_wrap .booking_form .form_control textarea {
@@ -96,7 +96,7 @@
     background: #F7F7F7;
     border: 0.073vw solid #E7E7E7;
     border-radius: 0.366vw;
-    padding: 0vw 1.464vw;
+    padding: 1.464vw;
   }
   
   #contact_us_wrap .booking_form .form_control textarea {
@@ -146,7 +146,7 @@
     background: #F7F7F7;
     border: 0.128vw solid #E7E7E7;
     border-radius: 0.641vw;
-    padding: 0vw 2.564vw;
+    padding: 2.564vw;
   }
   
   #contact_us_wrap .booking_form .form_control textarea {

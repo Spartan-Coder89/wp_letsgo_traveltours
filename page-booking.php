@@ -5,15 +5,15 @@
 
   <section id="booking_page_wrap">
     <h2>Set an appointment with us so we could start your booking process</h2>
-    <form id="booking_form" class="booking_form">
+    <form id="booking_form" class="booking_form" action="<?php echo admin_url('admin-post.php'); ?>" method="POST">
       <div class="date_time">
         <div class="form_control date">
           <label>Choose your prefered date:</label>
-          <input type="date">
+          <input type="date" name="meeting_date">
         </div>
         <div class="form_control time">
           <label>Choose your prefered time:</label>
-          <select>
+          <select name="meeting_time">
             <option>2:00 PM - 3:00 PM</option>
             <option>3:00 PM - 4:00 PM</option>
             <option>4:00 PM - 5:00 PM</option>
@@ -22,20 +22,22 @@
       </div>
       <div class="form_control">
         <label>First name:</label>
-        <input type="text">
+        <input type="text" name="fname">
       </div>
       <div class="form_control">
         <label>Last name:</label>
-        <input type="text">
+        <input type="text" name="lname">
       </div>
       <div class="form_control">
         <label>Email Address:</label>
-        <input type="text">
+        <input type="text" name="email">
       </div>
       <div class="form_control">
         <label>Contact number:</label>
-        <input type="tel">
+        <input type="tel" name="tel">
       </div>
+      <input type="hidden" name="appointment_nonce" value="<?php echo wp_create_nonce('appointment_nonce'); ?>">
+      <input type="hidden" name="action" value="appointment">
     </form>
     <div class="booking_conditions">
       <h2>Booking Conditions</h2>
