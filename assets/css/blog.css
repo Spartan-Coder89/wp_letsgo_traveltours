@@ -34,6 +34,10 @@
 #latest_blog .post p {
   line-height: 130%;
   margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 #latest_blog .post a {
