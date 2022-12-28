@@ -8,3 +8,4 @@ include_once 'includes/create_pages/create_pages.php';
 include_once 'includes/customizer/create_customizer.php';
 include_once 'includes/helper_functions/helper_functions.php';
 include_once 'includes/form_actions/create_form_actions.php';
+include_once 'includes/rest_api/create_rest_api.php';

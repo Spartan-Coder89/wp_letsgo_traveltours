@@ -63,7 +63,7 @@ $wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'letsgo_foot
 )));
 
 /**
- * Footer Section
+ * Contact Section
  */
 $wp_customize->add_section('letsgo_contact_section', array(
   'title' => 'Contact',
