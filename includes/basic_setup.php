@@ -90,12 +90,12 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style( 'about_css', CSS_DIR .'/about_us.css');
   }
 
-  if (is_page('blog')) {
+  if (is_page('blog') or is_archive()) {
     wp_enqueue_style( 'blog_css', CSS_DIR .'/blog.css');
   }
 
   if (is_page('booking')) {
-    wp_enqueue_style( 'bokking_css', CSS_DIR .'/booking_page.css');
+    wp_enqueue_style( 'booking_css', CSS_DIR .'/booking_page.css');
   }
 
   if (is_post_type_archive('destinations')) {

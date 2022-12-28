@@ -36,7 +36,7 @@ function get_inner_title() {
     $page_title = 'Book Your Destination';
   }
 
-  if (is_page('blog')) {
+  if (is_page('blog') or is_archive()) {
     $page_title = 'Know what’s the latest';
   }
 
@@ -52,6 +52,7 @@ function get_inner_title() {
   if (is_page('about-us')) {
     $page_title = 'Get To Know Us';
   }
+  
 
   return $page_title;
 }
