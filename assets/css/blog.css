@@ -53,6 +53,8 @@
 #pagination .page_list,
 #pagination .prev,
 #pagination .next,
+#pagination .prev > a,
+#pagination .next > a,
 #pagination .page_list div{
  display: flex;
  align-items: center;
