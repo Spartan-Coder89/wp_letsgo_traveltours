@@ -70,5 +70,11 @@ add_action('rest_api_init', function() {
   include_once 'customizer/common.php';
   include_once 'customizer/homepage.php';
   include_once 'customizer/about_us.php';
+  include_once 'customizer/social.php';
+  include_once 'destinations/archive.php';
+  include_once 'destinations/single_destination.php';
+  include_once 'blog/archive.php';
+  include_once 'blog/single_post.php';
+  include_once 'form_actions/contact_us.php';
+  include_once 'form_actions/appointment.php';
 });
-

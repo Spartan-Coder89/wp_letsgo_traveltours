@@ -4,7 +4,8 @@ function customizer_homepage() {
 
   register_rest_route('customizer/v1', '/homepage', array(
     'methods' => 'GET',
-    'callback' => 'customizer_homepage_callback'
+    'callback' => 'customizer_homepage_callback',
+    'permission_callback' => '__return_true'
   ));
 
   function customizer_homepage_callback() {
@@ -27,7 +28,6 @@ function customizer_homepage() {
     $data['around_the_world']['headline'] = get_theme_mod('letsgo_around_the_world_headline_setting');
     $data['around_the_world']['description'] = get_theme_mod('letsgo_around_the_world_description_setting');
     
-
     return $data;
   }
 }

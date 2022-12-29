@@ -4,7 +4,8 @@ function customizer_common() {
 
   register_rest_route('customizer/v1', '/common', array(
     'methods' => 'GET',
-    'callback' => 'customizer_common_callback'
+    'callback' => 'customizer_common_callback',
+    'permission_callback' => '__return_true'
   ));
 
   function customizer_common_callback() {

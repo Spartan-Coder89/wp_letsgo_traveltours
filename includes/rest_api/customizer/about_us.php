@@ -4,7 +4,8 @@ function customizer_about_us() {
 
   register_rest_route('customizer/v1', '/about-us', array(
     'methods' => 'GET',
-    'callback' => 'customizer_about_us_callback'
+    'callback' => 'customizer_about_us_callback',
+    'permission_callback' => '__return_true'
   ));
 
   function customizer_about_us_callback() {
