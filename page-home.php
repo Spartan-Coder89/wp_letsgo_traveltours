@@ -136,7 +136,7 @@
     <div class="contact_us_wrap">
       <div class="left">
         <div class="shadow"></div>
-        <div class="img" style="background-image: url(<?php echo IMAGES_DIR; ?>/img_placeholder.jpg);"></div>
+        <div class="img" style="background-image: url(<?php echo IMAGES_DIR; ?>/home/contact_img.png);"></div>
       </div>
       <form class="right">
         <img src="<?php echo IMAGES_DIR; ?>/home/ico_push_pin.png" class="push_pin" alt="">
