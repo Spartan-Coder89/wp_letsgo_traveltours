@@ -24,5 +24,26 @@
       </div>
     </footer>
     <?php wp_footer(); ?>
+
+    <?php if (!empty($_GET['prompt'])) { ?>
+      <div id="prompt">
+        <div class="prompt_wrap">
+          <div class="prompt_content">
+            <img id="prompt_close" src="<?php echo IMAGES_DIR ?>/ico_close.png" alt="">
+            <img src="<?php echo IMAGES_DIR ?>/ico_info.png" alt="">
+            <p><?php echo $_GET['prompt']; ?></p>
+          </div>
+        </div>
+
+        <?php
+          global $wp;
+          $current_page = home_url($wp->request);
+        ?>
+
+        <input type="hidden" id="current_page_url" value="<?php echo $current_page ?>">
+      </div>
+    <?php } ?>
+
   </body>
+
 </html>

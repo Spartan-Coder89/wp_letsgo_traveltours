@@ -15,9 +15,15 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
   if (document.getElementById('open_mobile_menu')) {
-
     document.getElementById('open_mobile_menu').addEventListener('click', function() {
       document.querySelector('#header .sp_layout .main_nav').classList.toggle('open');
+    });
+  }
+
+  if (document.getElementById('prompt')) {
+    document.getElementById('prompt_close').addEventListener('click', function() {
+      history.pushState({}, '', document.getElementById('current_page_url').value);
+      document.getElementById('prompt').remove();
     });
   }
 

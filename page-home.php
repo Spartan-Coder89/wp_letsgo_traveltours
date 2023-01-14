@@ -138,15 +138,17 @@
         <div class="shadow"></div>
         <div class="img" style="background-image: url(<?php echo IMAGES_DIR; ?>/home/contact_img.png);"></div>
       </div>
-      <form class="right">
+      <form class="right" action="<?php echo admin_url('admin-post.php'); ?>" method="POST">
         <img src="<?php echo IMAGES_DIR; ?>/home/ico_push_pin.png" class="push_pin" alt="">
         <p class="subtitle">Got some questions?</p>
         <p class="form_title">Contact Us Now</p>
         <p class="note">Our 24/7 customer service are always ready to answer </p>
-        <input type="text" placeholder="Fullname">
-        <input type="email" placeholder="Email Address">
-        <textarea placeholder="Message"></textarea>
-        <input type="submit" class="submit" value="Message Now">
+        <input type="text" name="fullname" placeholder="Fullname" id="fullname" class="check_input">
+        <input type="email" name="email" placeholder="Email Address" id="email" class="check_input">
+        <textarea name="message" placeholder="Message" id="message" class="check_input"></textarea>
+        <input type="submit" class="submit" value="Message Now" id="submit" disabled>
+        <input type="hidden" name="action" value="home_contact">
+        <input type="hidden" name="home_contact_nonce" value="<?php echo wp_create_nonce('home_contact_nonce'); ?>">
       </form>
     </div>
   </div>

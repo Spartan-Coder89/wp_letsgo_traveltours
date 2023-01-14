@@ -88,7 +88,7 @@ function set_appointment() {
   </div>';
 
   if (wp_mail( $to, $subject, $body, $headers )) {
-    wp_safe_redirect(get_site_url() .'/booking');
+    wp_safe_redirect(get_site_url() .'/booking?prompt='. urlencode('Your message has been successfully sent. We will get in touch with you as soon as possible.'));
     exit;
   } else {
     wp_safe_redirect(get_site_url() .'/booking?error='. urlencode('Something went wrong with your appointment setting.'));
