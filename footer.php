@@ -37,7 +37,7 @@
 
         <?php
           global $wp;
-          $current_page = home_url($wp->request);
+          $current_page = home_url( $wp->request );
         ?>
 
         <input type="hidden" id="current_page_url" value="<?php echo $current_page ?>">

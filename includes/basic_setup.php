@@ -28,35 +28,35 @@ add_action('init', function() {
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title'   =>  __('Home', 'textdomain'),
       'menu-item-classes' => 'home',
-      'menu-item-url'     => site_url('/'), 
+      'menu-item-url'     => get_site_url(), 
       'menu-item-status'  => 'publish'
     ));
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title'   =>  __('Destinations', 'textdomain'),
       'menu-item-classes' => 'destinations',
-      'menu-item-url'     => site_url('/destinations/'), 
+      'menu-item-url'     => get_site_url() .'/destinations/', 
       'menu-item-status'  => 'publish'
     ));
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title'   =>  __('Contact Us', 'textdomain'),
       'menu-item-classes' => 'contact_us',
-      'menu-item-url'     => site_url('/contact-us/'), 
+      'menu-item-url'     => get_site_url() .'/contact-us/', 
       'menu-item-status'  => 'publish'
     ));
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title'   =>  __('About Us', 'textdomain'),
       'menu-item-classes' => 'about_us',
-      'menu-item-url'     => site_url('/about-us/'), 
+      'menu-item-url'     => get_site_url() .'/about-us/', 
       'menu-item-status'  => 'publish'
     ));
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title'   =>  __('Blog', 'textdomain'),
       'menu-item-classes' => 'blog',
-      'menu-item-url'     => site_url('/blog/'), 
+      'menu-item-url'     => get_site_url() .'/blog/', 
       'menu-item-status'  => 'publish'
     ));
   }
