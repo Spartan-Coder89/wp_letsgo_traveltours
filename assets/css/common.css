@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0px;
 }
@@ -32,6 +36,76 @@ a {
   max-width: 1166px;
   width: 100%;
   margin: 0px auto;
+}
+
+.fade_in {
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.fade_in_upwards {
+  transition: 0.5s;
+  transform: matrix(1, 0, 0, 1, 0, 50);
+  opacity: 0;
+}
+
+.fade_in_downwards {
+  transition: 0.5s;
+  transform: matrix(1, 0, 0, 1, 0, -50);
+  opacity: 0;
+}
+
+.fade_in_leftwards {
+  transition: 0.5s;
+  transform: matrix(1, 0, 0, 1, 50, 0);
+  opacity: 0;
+}
+
+.fade_in_rightwards {
+  transition: 0.5s;
+  transform: matrix(1, 0, 0, 1, -50, 0);
+  opacity: 0;
+}
+
+.fade_in.visible {
+  opacity: 1;
+}
+
+.fade_in_upwards.visible,
+.fade_in_downwards.visible,
+.fade_in_leftwards.visible,
+.fade_in_rightwards.visible {
+  transform: matrix(1, 0, 0, 1, 0, 0) !important;
+  opacity: 1;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn .text {
+  position: relative;  
+  z-index: 1;
+}
+
+.btn .btn_bg {
+  transition: 0.4s;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background-color: #ff9200;
+  border-radius: 1000px;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+}
+
+.btn:hover .btn_bg {
+  left: 0px;
+  width: 100%;
 }
 
 #header {
@@ -100,9 +174,12 @@ a {
   max-width: 125px;
   width: 100%;
   text-align: center;
+  padding: 7px;
+}
+
+#header .cta .text {
   font-weight: 700;
   color: #fff;
-  padding: 7px;
 }
 
 #header.scrolled .pc_layout #bg_white {

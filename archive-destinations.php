@@ -21,7 +21,7 @@
             $general_details = get_post_meta(get_the_id(), '_general_details', true);
 
             echo
-            '<div class="destination" style="background-image: url('. get_the_post_thumbnail_url() .');">
+            '<div class="destination fade_in_upwards" style="background-image: url('. get_the_post_thumbnail_url() .');">
               <a href="'. get_the_permalink() .'" class="permalink">
                 <div class="overlay"></div>
                 <article>

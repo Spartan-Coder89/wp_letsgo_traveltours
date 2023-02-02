@@ -13,8 +13,13 @@
   font-family: 'Yeseva One';
   font-size: 24px;
   line-height: 130%;
+  margin-bottom: 10px;
+}
+
+#booking_page_wrap .note {
   margin-bottom: 30px;
 }
+
 
 #booking_page_wrap .booking_form {
   margin-bottom: 30px;
@@ -129,6 +134,11 @@
   background-color: #7b756d;
 }
 
+.required {
+  color: #ff1c1c;
+  font-weight: 900;
+}
+
 @media(max-width:1366px) {
 
   #booking_page_wrap {
@@ -137,6 +147,10 @@
   
   #booking_page_wrap > h2 {
     font-size: 1.757vw;
+    margin-bottom: 0.732vw;
+  }
+
+  #booking_page_wrap .note {
     margin-bottom: 2.196vw;
   }
   
@@ -217,6 +231,10 @@
   
   #booking_page_wrap > h2 {
     font-size: 3.077vw;
+    margin-bottom: 1.282vw;
+  }
+
+  #booking_page_wrap .note {
     margin-bottom: 3.846vw;
   }
   

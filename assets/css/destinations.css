@@ -11,9 +11,13 @@
   margin-bottom: 20px;
   position: relative;
   background-image: url('../images/img_placeholder.jpg');
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#destination_list .destination:hover {
+  background-size: auto 110%;
 }
 
 #destination_list .destination .permalink {
@@ -57,6 +61,30 @@
   margin-bottom: auto;
 }
 
+#destination_list .destination .starting_price {
+  transition: 0.5s;
+  opacity: 0;
+  transform: matrix(1, 0, 0, 1, 0, -30);
+}
+
+#destination_list .destination .destination_name {
+  transition: 0.5s;
+  opacity: 0;
+  transform: matrix(1, 0, 0, 1, 0, 30);
+}
+
+#destination_list .destination .location {
+  transition: 0.5s;
+  opacity: 0;
+  transform: matrix(1, 0, 0, 1, 0, 30);
+}
+
+#destination_list .destination:hover h2,
+#destination_list .destination:hover p {
+  opacity: 1;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
 #pagination {
   margin-bottom: 180px; 
 }
@@ -87,13 +115,13 @@
 }
 
 #pagination .page_list .active {
- background-color: #2EC4B6;
- border-radius: 100px;
+  background-color: #2EC4B6;
+  border-radius: 100px;
 }
 
 #pagination .page_list .active a {
- font-weight: 700;
- color: #fff;
+  font-weight: 700;
+  color: #fff;
 }
 
 @media(max-width:1366px) and (min-width:781px) {
@@ -158,6 +186,14 @@
 
   #destination_list .destination h2 {
     font-size: 3.077vw;
+  }
+
+  #destination_list .destination .starting_price,
+  #destination_list .destination .destination_name,
+  #destination_list .destination .location {
+    transition: 0.5s;
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
   }
 
   #pagination {

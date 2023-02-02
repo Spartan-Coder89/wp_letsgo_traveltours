@@ -56,13 +56,16 @@
   background: #FF9F1C;
   border-radius: 100px;
   padding: 13px 30px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #fff;
   margin-left: auto;
   max-width: 270px;
   width: 100%;
   text-align: center;
+}
+
+#banner section .cta .text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
 }
 
 #banner .social {
@@ -381,12 +384,15 @@
   background: #FF9F1C;
   border-radius: 100px;
   padding: 13px 30px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #fff;
   max-width: 270px;
   width: 100%;
   text-align: center;
+}
+
+#around_the_world section .cta .text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
 }
 
 #testimonial {
@@ -650,8 +656,11 @@
   #banner section .cta {
     border-radius: 7.321vw;
     padding: 0.952vw 2.196vw;
-    font-size: 1.464vw;
     max-width: 19.766vw;
+  }
+
+  #banner section .cta .text {
+    font-size: 1.464vw;
   }
   
   #banner .social {
@@ -838,8 +847,11 @@
   #around_the_world section .cta {
     border-radius: 7.321vw;
     padding: 0.952vw 2.196vw;
-    font-size: 1.464vw;
     max-width: 19.766vw;
+  }
+
+  #around_the_world section .cta .text {
+    font-size: 1.464vw;
   }
   
   #testimonial {
@@ -1017,8 +1029,11 @@
   #banner section .cta {
     border-radius: 12.821vw;
     padding: 1.667vw 3.846vw;
-    font-size: 2.564vw;
     max-width: 34.615vw;
+  }
+
+  #banner section .cta .text {
+    font-size: 2.564vw;
   }
   
   #banner .social {
@@ -1070,6 +1085,8 @@
   }
   
   #below_banner .top .featured_img .push_pin {
+    width: 4.487vw;
+    height: 6.795vw;
     top: -3.846vw;
     right: calc(50% - 3.205vw);
   }
@@ -1244,8 +1261,11 @@
   #around_the_world section .cta {
     border-radius: 12.821vw;
     padding: 1.667vw 3.846vw;
-    font-size: 2.564vw;
     max-width: 34.615vw;
+  }
+
+  #around_the_world section .cta .text {
+    font-size: 2.564vw;
   }
 
   #testimonial {

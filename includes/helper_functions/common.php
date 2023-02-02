@@ -28,10 +28,6 @@ function get_inner_title() {
 
   $page_title = '';
 
-  if (is_post_type_archive('destinations')) {
-    $page_title = 'Destinations to Explore';
-  }
-
   if (is_page('booking')) {
     $page_title = 'Book Your Destination';
   }
@@ -45,6 +41,10 @@ function get_inner_title() {
     $page_title = get_the_title($post->ID);
   }
 
+  if (is_post_type_archive('destinations')) {
+    $page_title = 'Destinations to Explore';
+  }
+  
   if (is_page('contact-us')) {
     $page_title = 'Contact Us';
   }
@@ -134,6 +134,8 @@ function get_all_posts() {
 
   if (!empty($posts)) {
 
+    $count = 1;
+
     foreach ($posts as $key => $post) {
 
       if (!empty(get_the_post_thumbnail_url($post->ID))) {
@@ -143,12 +145,14 @@ function get_all_posts() {
       }
       
       $posts_markup .=
-      '<article class="post">
+      '<article id="latest_blog_post_'. $count .'" class="post fade_in_upwards">
         <div class="featured_img" style="background-image: url('. $featured_img .');"></div>
         <h2>'. $post->post_title .'</h2>
         <p>'. $post->post_excerpt .'</p>
         <a href="'. get_the_permalink($post->ID) .'">Read More..</a>
       </article>';
+
+      $count++;
     }
   
     return $posts_markup;

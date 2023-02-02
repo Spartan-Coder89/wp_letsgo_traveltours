@@ -21,7 +21,7 @@
             $featured_img = !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : IMAGES_DIR .'/img_placeholder.jpg';
             
             echo
-            '<article class="post">
+            '<article class="post fade_in_upwards">
               <div class="featured_img" style="background-image: url('. $featured_img .');"></div>
               <h2>'. get_the_title() .'</h2>
               <p>'. get_the_excerpt() .'</p>

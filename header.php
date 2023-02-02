@@ -14,7 +14,7 @@
   <header id="header">
     <div class="bg"></div>
     <div class="main_wrap pc_layout">
-      <a class="header_logo_wrap" href="./">
+      <a class="header_logo_wrap" href="<?php echo get_site_url(); ?>">
         <h1>
           <img id="bg_not_white" class="header_logo" src="<?php echo header_logo_url()['logo_white_url']; ?>" alt="">
           <img id="bg_white" class="header_logo show" src="<?php echo header_logo_url()['logo_trans_url']; ?>" alt="">
@@ -23,12 +23,15 @@
       <nav class="main_nav">
         <?php output_menu('Main Navigation'); ?>
       </nav>
-      <a class="cta" href="<?php echo get_site_url() .'/booking' ?>">Book Here</a>
+      <a class="cta btn" href="<?php echo get_site_url() .'/booking' ?>">
+        <span class="text">Book Here</span>
+        <span class="btn_bg"></span>
+      </a>
     </div>
 
     <div class="main_wrap sp_layout">
       <div class="top">
-        <a class="header_logo_wrap" href="./">
+        <a class="header_logo_wrap" href="<?php echo get_site_url(); ?>">
           <h1>
             <img class="header_logo" src="<?php echo IMAGES_DIR; ?>/header_logo_black.png" alt="">
           </h1>
@@ -36,7 +39,10 @@
         <svg id="open_mobile_menu" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="white"/>
         </svg>
-        <a class="cta" href="">Book Here</a>
+        <a class="cta btn" href="<?php echo get_site_url() .'/booking' ?>">
+          <span class="text">Book Here</span>
+          <span class="btn_bg"></span>
+        </a>
       </div>
       <nav id="mobile_nav" class="main_nav"> 
         <?php output_menu('Main Navigation'); ?>

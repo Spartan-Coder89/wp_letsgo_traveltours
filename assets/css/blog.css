@@ -157,8 +157,13 @@
   #pagination .prev,
   #pagination .next,
   #pagination .page_list div {
-   width: 6.41vw;
-   height: 6.41vw;
+    width: 6.41vw;
+    height: 6.41vw;
+  }
+
+  #pagination .prev svg, #pagination .next svg {
+    width: 3.846vw;
+    height: 3.846vw;
   }
   
   #pagination .page_list .active {

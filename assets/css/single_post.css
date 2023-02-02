@@ -38,9 +38,8 @@
 }
 
 #content ul > li {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  position: relative;
+  padding-left: 20px;
 }
 
 #content ul > li:before {
@@ -51,6 +50,8 @@
   border-radius: 100px;
   margin-top: 7px;
   margin-right: 15px;
+  position: absolute;
+  left: 0px;
 }
 
 #content ul > li span {

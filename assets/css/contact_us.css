@@ -68,6 +68,11 @@
   background-color: #7b756d;
 }
 
+.required {
+  color: #ff1c1c;
+  font-weight: 900;
+}
+
 @media(max-width:1366px) {
   
   #contact_us_wrap {

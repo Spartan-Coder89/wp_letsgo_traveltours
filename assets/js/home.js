@@ -54,3 +54,95 @@ window.onpageshow = function() {
   }
 }
 
+
+window.addEventListener('DOMContentLoaded', function() {
+
+  function set_visible_class(id, time) {
+    setTimeout(() => {
+      document.getElementById(id).classList.add('visible');
+    }, time);
+  }
+
+  function is_in_viewport(element, relative_top) {
+    const rect = element.getBoundingClientRect();
+    return ( rect.top <= relative_top );
+  }
+
+  function set_visible_class_by_vp_visbility(id, relative_top, time) {
+    if (is_in_viewport(document.getElementById(id), relative_top)) {
+      if (!document.getElementById(id).classList.contains('visible')) {
+        set_visible_class(id, time);
+      }
+    }
+  }
+
+  set_visible_class('banner_headline', 200);
+  set_visible_class('banner_subheadline', 500);
+  set_visible_class('banner_cta', 800);
+  set_visible_class('social_fb', 2000);
+  set_visible_class('social_twitter', 1700);
+  set_visible_class('social_youtube', 1400);
+  set_visible_class('social_instagram', 1100);
+
+  set_visible_class_by_vp_visbility('below_banner', window.innerHeight - 100, 200);
+  set_visible_class_by_vp_visbility('below_banner_heading_section', window.innerHeight, 300);
+  set_visible_class_by_vp_visbility('below_banner_featured_img', window.innerHeight, 800);
+  set_visible_class_by_vp_visbility('below_banner_push_pin', window.innerHeight, 800);
+
+  set_visible_class_by_vp_visbility('assurance1', window.innerHeight, 100);
+  set_visible_class_by_vp_visbility('assurance2', window.innerHeight, 350);
+  set_visible_class_by_vp_visbility('assurance3', window.innerHeight, 550);
+
+  set_visible_class_by_vp_visbility('featured_destination_img', window.innerHeight - 150, 100);
+  set_visible_class_by_vp_visbility('featured_destination_details', window.innerHeight - 150, 300);
+
+  set_visible_class_by_vp_visbility('explore', window.innerHeight - 150, 0);
+  
+  set_visible_class_by_vp_visbility('around_the_world_details', window.innerHeight, 0);
+  set_visible_class_by_vp_visbility('around_the_world_fb', window.innerHeight, 0);
+  set_visible_class_by_vp_visbility('around_the_world_twit', window.innerHeight, 0);
+  set_visible_class_by_vp_visbility('around_the_world_yt', window.innerHeight, 0);
+  set_visible_class_by_vp_visbility('around_the_world_inst', window.innerHeight, 0);
+
+  set_visible_class_by_vp_visbility('testimonial', window.innerHeight, 0);
+
+  set_visible_class_by_vp_visbility('contact_us_left', window.innerHeight - 150, 0);
+  set_visible_class_by_vp_visbility('contact_us_right', window.innerHeight - 150, 0);
+
+  set_visible_class_by_vp_visbility('latest_blog_post_1', window.innerHeight, 100);
+  set_visible_class_by_vp_visbility('latest_blog_post_2', window.innerHeight, 350);
+  set_visible_class_by_vp_visbility('latest_blog_post_3', window.innerHeight, 550);
+
+  window.addEventListener('scroll', function() {
+
+    set_visible_class_by_vp_visbility('below_banner', window.innerHeight - 100, 200);
+    set_visible_class_by_vp_visbility('below_banner_heading_section', window.innerHeight, 300);
+    set_visible_class_by_vp_visbility('below_banner_featured_img', window.innerHeight, 800);
+    set_visible_class_by_vp_visbility('below_banner_push_pin', window.innerHeight, 800);
+  
+    set_visible_class_by_vp_visbility('assurance1', window.innerHeight, 100);
+    set_visible_class_by_vp_visbility('assurance2', window.innerHeight, 350);
+    set_visible_class_by_vp_visbility('assurance3', window.innerHeight, 550);
+  
+    set_visible_class_by_vp_visbility('featured_destination_img', window.innerHeight - 150, 100);
+    set_visible_class_by_vp_visbility('featured_destination_details', window.innerHeight - 150, 300);
+
+    set_visible_class_by_vp_visbility('explore', window.innerHeight, 0);
+
+    set_visible_class_by_vp_visbility('around_the_world_details', window.innerHeight, 0);
+    set_visible_class_by_vp_visbility('around_the_world_fb', window.innerHeight, 0);
+    set_visible_class_by_vp_visbility('around_the_world_twit', window.innerHeight, 0);
+    set_visible_class_by_vp_visbility('around_the_world_yt', window.innerHeight, 0);
+    set_visible_class_by_vp_visbility('around_the_world_inst', window.innerHeight, 0);
+
+    set_visible_class_by_vp_visbility('testimonial', window.innerHeight - 150, 0);
+
+    set_visible_class_by_vp_visbility('contact_us_left', window.innerHeight - 150, 0);
+    set_visible_class_by_vp_visbility('contact_us_right', window.innerHeight - 150, 0);
+
+    set_visible_class_by_vp_visbility('latest_blog_post_1', window.innerHeight, 100);
+    set_visible_class_by_vp_visbility('latest_blog_post_2', window.innerHeight, 350);
+    set_visible_class_by_vp_visbility('latest_blog_post_3', window.innerHeight, 550);
+  });
+
+});
