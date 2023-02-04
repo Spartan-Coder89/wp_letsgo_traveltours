@@ -108,7 +108,7 @@
   flex-wrap: wrap;
   position: relative;
   margin-bottom: 220px;
-  padding: 35px 40px;
+  padding: 35px 40px 70px;
   background-color: #f7f7f7;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -680,7 +680,7 @@
   
   #below_banner .top {
     margin-bottom: 16.105vw;
-    padding: 2.562vw 2.928vw;
+    padding: 2.562vw 2.928vw 5.124vw;
     box-shadow: 0vw 0.293vw 0.293vw rgba(0, 0, 0, 0.25);
   }
   
@@ -1361,6 +1361,8 @@
   }
   
   #contact_us .right .push_pin {
+    width: 3.846vw;
+    height: 6.538vw;
     top: -3.205vw;
     left: 1.282vw;
   }

@@ -19,4 +19,44 @@ window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('day_'+ day).classList.add('show');
     });
   });
+
+  function set_visible_class(element, timeout) {
+    setTimeout(() => {
+      element.classList.add('visible');
+    }, timeout);
+  }
+
+  function is_in_viewport(element, relative_top) {
+    const rect = element.getBoundingClientRect();
+    return ( rect.top <= relative_top );
+  }
+
+  function set_visible_class_by_vp_visbility(element, relative_top, time) {
+    if (is_in_viewport(element, relative_top)) {
+      if (!element.classList.contains('visible')) {
+        set_visible_class(element, time);
+      }
+    }
+  }
+  
+  let timecounter = 150;
+  document.querySelectorAll('#details .to_fade').forEach( (element) => {
+    set_visible_class(element, timecounter);
+    timecounter += 250;
+  });
+
+  set_visible_class_by_vp_visbility(document.querySelector('#video_promotion'), window.innerHeight - 100, 150);
+  set_visible_class_by_vp_visbility(document.querySelector('#key_highlights'), window.innerHeight - 100, 150);
+  set_visible_class_by_vp_visbility(document.querySelector('#itenerary'), window.innerHeight - 100, 150);
+  set_visible_class_by_vp_visbility(document.querySelector('#call_to_action section'), window.innerHeight - 200, 100);
+  set_visible_class_by_vp_visbility(document.querySelector('#call_to_action .cta_btn'), window.innerHeight - 200, 100);
+
+  window.addEventListener('scroll', function() {
+    set_visible_class_by_vp_visbility(document.querySelector('#video_promotion'), window.innerHeight - 100, 150);
+    set_visible_class_by_vp_visbility(document.querySelector('#key_highlights'), window.innerHeight - 100, 150);
+    set_visible_class_by_vp_visbility(document.querySelector('#itenerary'), window.innerHeight - 100, 150);
+    set_visible_class_by_vp_visbility(document.querySelector('#call_to_action section'), window.innerHeight - 200, 100);
+    set_visible_class_by_vp_visbility(document.querySelector('#call_to_action .cta_btn'), window.innerHeight - 200, 100);
+  });
+
 });

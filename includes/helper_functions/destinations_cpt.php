@@ -2,58 +2,6 @@
 
 /**
  * Outputs post meta on destinations post's
- * general details
- */
-function destination_general_details_meta($post_id) {
-  
-  $general_details = get_post_meta($post_id, '_general_details', true);
-
-  $location = !empty($general_details['location']) ? $general_details['location'] : '';
-  $flight = !empty($general_details['flight']) ? $general_details['flight'] : '';
-  $board_and_lodging = !empty($general_details['board_and_lodging']) ? $general_details['board_and_lodging'] : '';
-  $meals = !empty($general_details['meals']) ? $general_details['meals'] : '';
-  $tour_guide = !empty($general_details['tour_guide']) ? $general_details['tour_guide'] : '';
-  $visa = !empty($general_details['visa']) ? $general_details['visa'] : '';
-  
-  echo
-  '<div class="input_fields">
-    <label>Location:</label>
-    <input type="text" name="general_details[location]" value="'. $location .'">
-  </div>';
-
-  echo
-  '<div class="input_fields">
-    <label>Flight:</label>
-    <input type="text" name="general_details[flight]" value="'. $flight .'">
-  </div>';
-
-  echo
-  '<div class="input_fields">
-    <label>Board and Lodging::</label>
-    <input type="text" name="general_details[board_and_lodging]" value="'. $board_and_lodging .'">
-  </div>';
-
-  echo
-  '<div class="input_fields">
-    <label>Meals:</label>
-    <input type="text" name="general_details[meals]" value="'. $meals .'">
-  </div>';
-
-  echo
-  '<div class="input_fields">
-    <label>Tour Guide:</label>
-    <input type="text" name="general_details[tour_guide]" value="'. $tour_guide .'">
-  </div>';
-
-  echo
-  '<div class="input_fields">
-    <label>Visa:</label>
-    <input type="text" name="general_details[visa]" value="'. $visa .'">
-  </div>';
-}
-
-/**
- * Outputs post meta on destinations post's
  * general details on the frontend
  */
 function destination_general_details_frontend($post_id) {
@@ -68,37 +16,37 @@ function destination_general_details_frontend($post_id) {
   $visa = !empty($general_details['visa']) ? $general_details['visa'] : '';
   
   echo
-  '<li class="input_fields">
+  '<li class="input_fields to_fade fade_in_upwards">
     <p class="label">Location:</p>
     <p class="value">'. $location .'</p>
   </li>';
 
   echo
-  '<li class="input_fields">
+  '<li class="input_fields to_fade fade_in_upwards">
     <p class="label">Flight:</p>
     <p class="value">'. $flight .'</p>
   </li>';
 
   echo
-  '<li class="input_fields">
-    <p class="label">Board and Lodging::</p>
+  '<li class="input_fields to_fade fade_in_upwards">
+    <p class="label">Board and Lodging:</p>
     <p class="value">'. $board_and_lodging .'</p>
   </li>';
 
   echo
-  '<li class="input_fields">
+  '<li class="input_fields to_fade fade_in_upwards">
     <p class="label">Meals:</p>
     <p class="value">'. $meals .'</p>
   </li>';
 
   echo
-  '<li class="input_fields">
+  '<li class="input_fields to_fade fade_in_upwards">
     <p class="label">Tour Guide:</p>
     <p class="value">'. $tour_guide .'</p>
   </li>';
 
   echo
-  '<li class="input_fields">
+  '<li class="input_fields to_fade fade_in_upwards">
     <p class="label">Visa:</p>
     <p class="value">'. $visa .'</p>
   </li>';

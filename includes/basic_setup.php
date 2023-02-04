@@ -114,6 +114,7 @@ add_action('wp_enqueue_scripts', function() {
 
   if (is_singular('post')) {
     wp_enqueue_style( 'single_post_css', CSS_DIR .'/single_post.css');
+    wp_enqueue_script( 'single_post_js', JS_DIR .'/single_post.js', null, 0.1, true );
   }
 
 });

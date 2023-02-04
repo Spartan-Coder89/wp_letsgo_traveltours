@@ -8,9 +8,9 @@
 <main>
   <?php get_template_part('temp_parts/inner_page_banner'); ?>
 
-  <div id="featured_img" style="background-image: url(<?php echo $featured_img; ?>);"></div>
+  <div id="featured_img" class="fade_in_upwards" style="background-image: url(<?php echo $featured_img; ?>);"></div>
 
-  <section id="content" class="main_wrap">
+  <section id="content" class="main_wrap fade_in_upwards">
     <?php echo get_the_content(null, false, $post->ID); ?>
   </section>
 </main>

@@ -179,6 +179,10 @@
     margin-bottom: 2.564vw;
   }
   
+  #destination_list .destination .permalink {
+    padding: 3.846vw;
+  }
+  
   #destination_list .destination p, 
   #destination_list .destination h2 {
     margin-bottom: 1.923vw;

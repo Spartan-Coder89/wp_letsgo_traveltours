@@ -6,31 +6,31 @@
     <div id="details" class="single_wrap">
       <div class="top">
         <div 
-          class="featured_img" 
+          class="featured_img to_fade fade_in_upwards" 
           <?php $featured_img = get_the_post_thumbnail_url($post->ID, 'large'); ?>
           style="background-image: url('<?php echo !empty($featured_img) ? $featured_img : IMAGES_DIR .'/img_placeholder.jpg'; ?>');"></div>
         <ul class="detail_list">
           <?php destination_general_details_frontend($post->ID); ?>
         </ul>
       </div>
-      <div class="description">
+      <div class="description to_fade fade_in_upwards">
         <p class="label">Description</p>
         <?php echo wpautop(get_the_content($post->ID)); ?>
       </div>
     </div>
 
-    <div id="video_promotion" class="main_wrap">
+    <div id="video_promotion" class="main_wrap fade_in">
       <?php output_video_attachment_frontend($post); ?>
     </div>
 
-    <section id="key_highlights" class="single_wrap">
+    <section id="key_highlights" class="single_wrap fade_in_upwards">
       <h2>Key Highlights</h2>
       <ul class="highlights">
         <?php destination_key_highlights_frontend($post->ID); ?>
       </ul>
     </section>
 
-    <section id="itenerary" class="single_wrap">
+    <section id="itenerary" class="single_wrap fade_in_upwards">
       <h2>Itenerary</h2>
       <div id="tabs">
         <div class="tabs_nav">
@@ -44,11 +44,11 @@
 
     <div id="call_to_action">
       <div class="single_wrap">
-        <section>
+        <section class="fade_in_rightwards">
           <h2>Ready To Go?</h2>
           <p>Click the button to book your destination</p>
         </section>
-        <a href="<?php echo get_site_url() .'/booking'; ?>" class="cta_btn">BOOK YOUR TRIP NOW</a>
+        <a href="<?php echo get_site_url() .'/booking'; ?>" class="cta_btn fade_in_leftwards">BOOK YOUR TRIP NOW</a>
       </div>
     </div>
   </main>
